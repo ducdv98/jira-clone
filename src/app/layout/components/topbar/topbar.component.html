@@ -1,0 +1,17 @@
+<div class="topbar-container">
+    <div class="brand">
+        <app-svg-icon name="menu" [width]="24" [height]="24"></app-svg-icon>
+        <a>
+            <app-svg-icon name="jira" [width]="134" [height]="24"></app-svg-icon>
+        </a>
+    </div>
+
+    <div class="menu">
+        <div class="menu-item" *ngFor="let item of topbarMenuItems" [ngClass]="{'active': item.selected}">
+            <button nz-dropdown nzTrigger="click">
+                {{item.name}}
+                <app-svg-icon name="arrowDown" [width]="24" [height]="24"></app-svg-icon>
+            </button>
+        </div>
+    </div>
+</div>

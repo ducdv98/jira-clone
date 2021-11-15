@@ -1,0 +1,36 @@
+.topbar-container {
+  @apply h-topbar shadow-md flex flex-row px-4;
+
+  .brand {
+    @apply flex flex-row items-center gap-1.5 mr-4;
+  }
+
+  .menu {
+    @apply flex flex-row items-center;
+
+    .menu-item {
+      @apply flex flex-row items-center h-full border-b-2 mx-1 border-transparent;
+
+      &.active {
+        @apply border-primary;
+
+        button {
+          @apply text-primary;
+        }
+      }
+
+      button {
+        @apply flex flex-row items-center text-textHeader font-medium rounded py-1 pl-2 pr-0.5;
+
+        &:hover {
+          @apply text-primary bg-blue-150;
+        }
+      }
+
+      // Small trick to make items stick together :)
+      app-svg-icon {
+        margin-left: -6px;
+      }
+    }
+  }
+}

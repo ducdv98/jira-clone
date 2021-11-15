@@ -1,0 +1,32 @@
+.divider {
+  @apply top-0 bottom-0 right-0 absolute w-1 cursor-ew-resize;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0) 100%);
+  -webkit-transition-duration: 0.22s;
+  transition-duration: 0.22s;
+  -webkit-transition-property: left, opacity, width;
+  transition-property: left, opacity, width;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+
+  &:hover {
+    @apply bg-blue-550;
+  }
+}
+
+.resizer-icon {
+  @apply absolute -right-2.5 top-8 text-white bg-white text-gray-900 cursor-pointer rounded-full shadow-full opacity-0;
+  transition: background-color 100ms linear, color 100ms linear, opacity 350ms cubic-bezier(0.2, 0, 0, 1);
+
+  &:hover {
+    @apply opacity-100 bg-blue-550 text-white;
+  }
+
+  &.revert {
+    transform: rotate(180deg);
+  }
+
+  &.focused {
+    @apply opacity-100;
+    transition: background-color 100ms linear, color 100ms linear, opacity 350ms cubic-bezier(0.2, 0, 0, 1);
+  }
+}

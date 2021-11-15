@@ -1,0 +1,30 @@
+<div class="sidebar" [ngClass]="{'collapsed' : collapsed}">
+    <app-sidebar-resizer class="resizer"
+                         [collapsed]="collapsed"
+                         (onToggleSidebar)="onToggleSidebar()">
+    </app-sidebar-resizer>
+
+    <div class="sidebar-content">
+        <div class="sidebar-header">
+            <div class="project-avatar"></div>
+            <div>
+                <div class="font-semibold">Jira clone</div>
+                <div class="text-xs text-gray-500">Software project</div>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+            <a *ngFor="let item of navItems" class="nav-item"
+               [routerLink]="item.link" routerLinkActive="active">
+                <app-svg-icon [name]="item.icon" [width]="24" [height]="24"></app-svg-icon>
+                <div>{{item.label}}</div>
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <div>You're in a team-managed project</div>
+            <a class="font-medium p-3">Learn more</a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,8 @@
+<div class="divider"
+     appResizer
+     (onHoverResizer)="onHoverResizer($event)"
+     (onToggleSidebar)="onToggle()"></div>
+
+<button class="resizer-icon" [ngClass]="{'revert': !collapsed, 'focused': focused || collapsed}">
+    <app-svg-icon (click)="onToggle()" name="arrowLeft" [width]="24" [height]="24"></app-svg-icon>
+</button>
