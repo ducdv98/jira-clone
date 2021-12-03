@@ -1,0 +1,27 @@
+.action-container {
+  @apply px-10 my-7 w-full h-10 flex flex-row items-center justify-between;
+
+  .search-container {
+    @apply w-32 relative rounded-md shadow-sm;
+
+    .search-input {
+      @apply block w-full pr-10 sm:text-sm border-gray-300 border rounded py-2 bg-gray-50 focus:border-blue-550 focus:outline-none;
+    }
+  }
+
+  .contributors {
+    @apply ml-4 flex flex-row gap-2;
+  }
+
+  .grouping-action {
+    @apply flex flex-row items-center w-48;
+
+    .label {
+      @apply block text-xs font-thin text-gray-700 uppercase w-2/5;
+    }
+
+    .custom-select {
+      @apply w-3/5 font-medium text-textDark bg-gray-50;
+    }
+  }
+}

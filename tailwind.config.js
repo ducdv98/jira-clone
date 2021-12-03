@@ -1,26 +1,6 @@
 module.exports = {
-  prefix: '',
-  important: false,
-  separator: ':',
-  purge: {
-    enabled: true,
-    content: ['./src/**/*.ts', './src/**/*.html'],
-    options: {
-      whitelistPatterns: [
-        /^font/,
-        /^cursor/,
-        /^pl-/,
-        /^px-/,
-        /^pr-/,
-        /^ml-/,
-        /^mx-/,
-        /^mr-/,
-        /^mb-/,
-        /^mt-/,
-        /^ng-/
-      ]
-    }
-  },
+  purge: ['./src/**/*.ts', './src/**/*.html'],
+  darkMode: false,
   theme: {
     extend: {
       colors: {
@@ -134,6 +114,7 @@ module.exports = {
         backgroundLightest: '#F4F5F7',
         backgroundLightPrimary: '#D2E5FE',
         backgroundLightSuccess: '#E4FCEF',
+        backgroundDark: '#091e4214',
 
         borderLightest: '#dfe1e6',
         borderLight: '#C1C7D0',
@@ -166,7 +147,11 @@ module.exports = {
         crosshair: 'crosshair',
         'zoom-in': 'zoom-in',
         'ew-resize': 'ew-resize'
-      }
+      },
     }
-  }
+  },
+  variants: {},
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }

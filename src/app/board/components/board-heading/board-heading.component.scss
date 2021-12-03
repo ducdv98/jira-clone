@@ -1,0 +1,11 @@
+.board-heading {
+  @apply px-10 my-6;
+
+  .board-title {
+    @apply flex flex-row justify-between;
+
+    .square-button {
+      @apply w-8 h-8 text-textDark rounded-sm hover:bg-backgroundDark;
+    }
+  }
+}

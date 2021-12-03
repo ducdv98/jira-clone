@@ -1,9 +1,12 @@
 import { BoardComponent } from './board/board.component';
+import { BoardContainerComponent } from './board-container/board-container.component';
 
 export const containers = [
-  BoardComponent
+  BoardComponent,
+  BoardContainerComponent,
 ];
 
 export {
-  BoardComponent
+  BoardComponent,
+  BoardContainerComponent,
 }

@@ -1,0 +1,15 @@
+.app-container {
+  app-topbar {
+    @apply z-10;
+  }
+
+  @apply w-screen h-screen flex flex-col overflow-hidden;
+
+  .app-content {
+    @apply w-screen h-full flex flex-row;
+
+    .main-content {
+      @apply w-full;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<div class="action-container">
+  <div class="flex flex-row items-center">
+    <div class="search-container">
+      <input type="text"
+             class="search-input">
+      <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+        <app-svg-icon name="search"></app-svg-icon>
+      </div>
+    </div>
+
+    <div class="contributors">
+      <app-avatar
+        tooltip="Anna"
+        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"></app-avatar>
+      <app-avatar
+        tooltip="Jasmine"
+        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"></app-avatar>
+    </div>
+  </div>
+
+  <div class="grouping-action">
+    <label class="label">Group by</label>
+    <nz-select class="custom-select" [nzSuffixIcon]="selectSuffixIcon">
+      <nz-option nzCustomContent nzLabel="None" nzValue="None">
+        <span>None</span>
+      </nz-option>
+      <nz-option nzCustomContent nzLabel="Assignee" nzValue="Assignee">
+        <span>Assignee</span>
+      </nz-option>
+      <nz-option nzCustomContent nzLabel="Subtask" nzValue="Subtask">
+        <span>Subtask</span>
+      </nz-option>
+    </nz-select>
+
+    <ng-template #selectSuffixIcon>
+      <app-svg-icon name="arrowDown" class="text-gray-900 text-bold"></app-svg-icon>
+    </ng-template>
+  </div>
+</div>
