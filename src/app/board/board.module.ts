@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 import { BoardContainerComponent, containers } from './containers';
 import { components } from './components';
 import { SvgIconModule } from '@app/shared/components/svg-icon/svg-icon.module';
 import { AvatarModule } from '@app/shared/components/avatar/avatar.module';
-import { NzSelectModule } from 'ng-zorro-antd/select';
 
 const routes: Routes = [
   {

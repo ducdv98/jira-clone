@@ -1,0 +1,33 @@
+.board-column {
+  @apply rounded bg-backgroundLightest w-boardColumn;
+  height: fit-content;
+
+  .board-column-header {
+    @apply w-full h-12 p-4 flex flex-row justify-between items-center uppercase;
+
+    .square-button {
+      @apply invisible;
+    }
+
+    &:hover .square-button {
+      @apply visible;
+    }
+
+    .board-column-header-name {
+      @apply text-xs font-medium text-textDark;
+    }
+  }
+
+  .board-column-content {
+    @apply mx-1.5 flex flex-col gap-1;
+
+  }
+
+  .board-column-footer {
+    @apply p-1.5;
+
+    .btn-create-issue {
+      @apply block rounded flex flex-row items-center gap-1 px-4 py-2 w-full text-textDark font-medium hover:bg-backgroundDark;
+    }
+  }
+}

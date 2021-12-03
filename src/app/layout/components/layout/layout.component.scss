@@ -9,7 +9,7 @@
     @apply w-screen h-full flex flex-row;
 
     .main-content {
-      @apply w-full;
+      @apply w-full overflow-auto;
     }
   }
 }

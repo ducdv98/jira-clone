@@ -1,0 +1,13 @@
+.board-card {
+  @apply rounded transition-colors bg-white p-3 shadow hover:bg-backgroundLightest cursor-pointer;
+
+  .square-button {
+    @apply invisible;
+  }
+
+  &:hover {
+    .square-button {
+      @apply visible;
+    }
+  }
+}

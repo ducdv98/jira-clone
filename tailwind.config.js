@@ -123,6 +123,7 @@ module.exports = {
       spacing: {
         sidebar: '240px',
         topbar: '56px',
+        boardColumn: '270px',
       },
       boxShadow: {
         sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',

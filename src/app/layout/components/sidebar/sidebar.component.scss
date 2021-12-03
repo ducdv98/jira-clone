@@ -25,12 +25,13 @@
     }
 
     .sidebar-nav {
-      @apply mx-2 h-7 flex-grow overflow-y-auto flex-shrink;
+      @apply mx-2 overflow-y-auto flex-shrink;
+      flex-grow: 3;
     }
 
     .sidebar-footer {
-      @apply flex flex-col flex-shrink-0 items-center justify-center m-2 mb-4 text-xs text-textDark;
-      height: 55px;
+      @apply flex flex-col flex-shrink items-center justify-center m-2 text-xs text-textDark;
+      flex-grow: 1;
     }
 
     .nav-item {
