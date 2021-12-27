@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Card } from '@app/core/interfaces';
+import { CardTypesEnum } from '@app/core/enums';
 
 @Component({
   selector: 'app-board-card',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board-card.component.scss']
 })
 export class BoardCardComponent implements OnInit {
+  @Input() card!: Card;
+
+  CardTypes = CardTypesEnum;
 
   constructor() { }
 

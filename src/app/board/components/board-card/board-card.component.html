@@ -1,12 +1,16 @@
-<div class="board-card">
+<div class="board-card" cdkDrag>
   <div class="flex flex-row">
-    <div class="board-card-name">Fix: something in Home page very very long long</div>
+    <div class="board-card-name">{{card.title}}</div>
     <button class="square-button">
       <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
     </button>
   </div>
   <div class="flex flex-row mt-4 font-medium items-start">
-    <app-svg-icon name="blueCheck" [width]="24" [height]="24"></app-svg-icon>
+    <ng-container [ngSwitch]="card.type">
+      <app-svg-icon *ngSwitchCase="CardTypes.TASK" name="blueCheck" [width]="24" [height]="24"></app-svg-icon>
+      <app-svg-icon *ngSwitchCase="CardTypes.BUG" name="bug" [width]="24" [height]="24"></app-svg-icon>
+      <app-svg-icon *ngSwitchCase="CardTypes.STORY" name="story" [width]="24" [height]="24"></app-svg-icon>
+    </ng-container>
     <div class="uppercase text-xs text-textDark">Demo-1</div>
   </div>
 </div>

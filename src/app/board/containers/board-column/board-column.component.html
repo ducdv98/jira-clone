@@ -1,19 +1,14 @@
-<div class="board-column">
+<div class="board-column" cdkDropList cdkDrag>
   <div class="board-column-header">
-    <div class="board-column-header-name">To do 1 issue</div>
+    <div class="board-column-header-name">{{column?.name}} 1 issue</div>
     <button class="square-button">
       <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
     </button>
   </div>
 
   <div class="board-column-content">
-    <app-board-card></app-board-card>
-    <app-board-card></app-board-card>
-    <app-board-card></app-board-card>
-    <app-board-card></app-board-card>
-    <app-board-card></app-board-card>
-    <app-board-card></app-board-card>
-    <app-board-card></app-board-card>
+    <app-board-card *ngFor="let card of (cards$ | async)"
+                    [card]="card"></app-board-card>
   </div>
   <div class="board-column-footer">
     <button class="btn-create-issue">

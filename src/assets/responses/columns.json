@@ -1,0 +1,18 @@
+[
+  {
+    "id": "f35ae884-5f3d-11ec-bf63-0242ac130002",
+    "name": "TODO"
+  },
+  {
+    "id": "00a34018-5f3e-11ec-bf63-0242ac130002",
+    "name": "DOING"
+  },
+  {
+    "id": "048d7072-5f3e-11ec-bf63-0242ac130002",
+    "name": "DONE"
+  },
+  {
+    "id": "0947554c-5f3e-11ec-bf63-0242ac130002",
+    "name": "IN PRODUCTION"
+  }
+]

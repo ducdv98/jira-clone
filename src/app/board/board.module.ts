@@ -9,6 +9,7 @@ import { BoardContainerComponent, containers } from './containers';
 import { components } from './components';
 import { SvgIconModule } from '@app/shared/components/svg-icon/svg-icon.module';
 import { AvatarModule } from '@app/shared/components/avatar/avatar.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
     SvgIconModule,
     AvatarModule,
     NzSelectModule,
+    DragDropModule,
   ]
 })
 export class BoardModule {
