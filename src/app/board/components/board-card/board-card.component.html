@@ -1,5 +1,5 @@
-<div class="board-card" cdkDrag>
-  <div class="flex flex-row">
+<div class="board-card">
+  <div class="flex flex-row justify-between">
     <div class="board-card-name">{{card.title}}</div>
     <button class="square-button">
       <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
@@ -11,6 +11,6 @@
       <app-svg-icon *ngSwitchCase="CardTypes.BUG" name="bug" [width]="24" [height]="24"></app-svg-icon>
       <app-svg-icon *ngSwitchCase="CardTypes.STORY" name="story" [width]="24" [height]="24"></app-svg-icon>
     </ng-container>
-    <div class="uppercase text-xs text-textDark">Demo-1</div>
+    <div class="uppercase text-xs text-textDark">Demo-{{card.id}}</div>
   </div>
 </div>

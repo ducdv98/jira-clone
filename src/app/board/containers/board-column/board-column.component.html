@@ -1,6 +1,15 @@
-<div class="board-column" cdkDropList cdkDrag>
+<div class="board-column"
+     cdkDropList
+     [id]="column.id"
+     [cdkDropListData]="(cards$ | async) || []"
+     (cdkDropListDropped)="onCardDropped($event)">
   <div class="board-column-header">
-    <div class="board-column-header-name">{{column?.name}} 1 issue</div>
+    <div class="board-column-header-name">
+      <span>{{column?.name}}</span>
+      <span *ngIf="cards$ | async as cards">
+        {{cards.length > 1 ? cards.length + ' issues' : cards.length + ' issue'}}
+      </span>
+    </div>
     <button class="square-button">
       <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
     </button>
@@ -8,6 +17,8 @@
 
   <div class="board-column-content">
     <app-board-card *ngFor="let card of (cards$ | async)"
+                    cdkDrag
+                    [cdkDragData]="card.id"
                     [card]="card"></app-board-card>
   </div>
   <div class="board-column-footer">
