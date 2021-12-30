@@ -1,0 +1,49 @@
+<div class="w-full">
+  <button class="btn-create-issue" *ngIf="!editMode" (click)='editMode=true'>
+    <app-svg-icon name="plus"></app-svg-icon>
+    <div>Create issue</div>
+  </button>
+  <form *ngIf="editMode" class="create-issue-form"
+        [formGroup]="createCardForm"
+        appClickOutside>
+      <textarea
+        formControlName="title"
+        placeholder="What need to be done?"
+        rows="2"
+        appAutofocus
+        appTextareaSubmitOnEnter
+        (onSubmit)="onSubmit()">
+      </textarea>
+    <div class="issue-type-dropdown">
+      <nz-select [nzCustomTemplate]="defaultTemplate" [nzDropdownMatchSelectWidth]="false"
+                 [nzDropdownRender]="renderTemplate"
+                 nzBorderless
+                 [nzOptionHeightPx]="40"
+                 [nzSuffixIcon]="customDropdownIcon"
+                 formControlName="type"
+                 class="w-12">
+        <nz-option nzCustomContent [nzLabel]="type.icon" [nzValue]="type.label"
+                   *ngFor="let type of cardTypes">
+          <div class="flex flex-row pt-1.5">
+            <app-svg-icon [name]="type.icon" [height]="24" [width]="24"></app-svg-icon>
+            <div class="leading-none capitalize">{{type.label}}</div>
+          </div>
+        </nz-option>
+      </nz-select>
+
+      <ng-template #renderTemplate>
+        <button class="border-t border-gray-550 px-4 py-2">
+          Manage issue types
+        </button>
+      </ng-template>
+
+      <ng-template #defaultTemplate let-selected>
+        <app-svg-icon [name]="selected.nzLabel" [height]="24" [width]="24"></app-svg-icon>
+      </ng-template>
+
+      <ng-template #customDropdownIcon>
+        <app-svg-icon class="text-textDark" name="arrowDown" [width]="24" [height]="24"></app-svg-icon>
+      </ng-template>
+    </div>
+  </form>
+</div>

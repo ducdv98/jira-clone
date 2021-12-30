@@ -1,16 +1,24 @@
-<div class="board-card">
+<div class="board-card" [ngClass]="{'opacity-50': loading}">
   <div class="flex flex-row justify-between">
     <div class="board-card-name">{{card.title}}</div>
     <button class="square-button">
       <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
     </button>
   </div>
-  <div class="flex flex-row mt-4 font-medium items-start">
-    <ng-container [ngSwitch]="card.type">
-      <app-svg-icon *ngSwitchCase="CardTypes.TASK" name="blueCheck" [width]="24" [height]="24"></app-svg-icon>
-      <app-svg-icon *ngSwitchCase="CardTypes.BUG" name="bug" [width]="24" [height]="24"></app-svg-icon>
-      <app-svg-icon *ngSwitchCase="CardTypes.STORY" name="story" [width]="24" [height]="24"></app-svg-icon>
-    </ng-container>
-    <div class="uppercase text-xs text-textDark">Demo-{{card.id}}</div>
+  <div class="flex flex-row justify-between items-center w-full">
+    <div class="flex flex-row mt-4 font-medium items-start">
+      <ng-container [ngSwitch]="card.type">
+        <app-svg-icon *ngSwitchCase="CardTypes.TASK" name="blueCheck" [width]="24" [height]="24"></app-svg-icon>
+        <app-svg-icon *ngSwitchCase="CardTypes.BUG" name="bug" [width]="24" [height]="24"></app-svg-icon>
+        <app-svg-icon *ngSwitchCase="CardTypes.STORY" name="story" [width]="24" [height]="24"></app-svg-icon>
+      </ng-container>
+      <div class="uppercase text-xs text-textDark" *ngIf="card.ordinalId">Demo-{{card.ordinalId}}</div>
+    </div>
+
+    <app-svg-icon *ngIf="loading"
+                  class="animate-spin"
+                  name="circleIndicator"
+                  fill="#fff">
+    </app-svg-icon>
   </div>
 </div>

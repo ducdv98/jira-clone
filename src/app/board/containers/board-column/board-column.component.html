@@ -18,13 +18,11 @@
   <div class="board-column-content">
     <app-board-card *ngFor="let card of (cards$ | async)"
                     cdkDrag
+                    [loading]="(loadingCardIds$ | async)?.includes(card.id) || false"
                     [cdkDragData]="card.id"
                     [card]="card"></app-board-card>
   </div>
   <div class="board-column-footer">
-    <button class="btn-create-issue">
-      <app-svg-icon name="plus"></app-svg-icon>
-      <div>Create issue</div>
-    </button>
+    <app-create-card-form (createCard)="onCreateCard($event)"></app-create-card-form>
   </div>
 </div>

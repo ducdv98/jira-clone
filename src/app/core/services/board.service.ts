@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { delay, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { Card, Column } from '@app/core/interfaces';
 
@@ -25,6 +25,12 @@ export class BoardService {
 
     return this.httpClient.get(apiUrl).pipe(
       map(r => r as Card[]),
+      delay(1000)
+    );
+  }
+
+  createCard(card: Card): Observable<unknown> {
+    return of({}).pipe(
       delay(1000)
     );
   }

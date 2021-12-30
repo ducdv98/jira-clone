@@ -19,3 +19,17 @@ export const selectCardsByColumnId = (columnId: string) => createSelector(
     return cards && cards.filter(c => c.columnId === columnId);
   }
 );
+
+export const selectLatestOrdinalId = createSelector(
+  allCards,
+  cards => {
+    const cloned = [...cards];
+    cloned.sort((c1, c2) => c2.ordinalId - c1.ordinalId);
+    return cloned[0]?.ordinalId;
+  }
+);
+
+export const selectLoadingCardIds = createSelector(
+  selectCardState,
+  state => state.loadingCardIds
+);

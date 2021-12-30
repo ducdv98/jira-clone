@@ -31,3 +31,18 @@ export const updateCardColumnError = createAction(
   `${ACTION_PREFIX} Update card column error`,
   props<{ error: string }>()
 );
+
+export const createCard = createAction(
+  `${ACTION_PREFIX} Create card`,
+  props<{ card: Card }>()
+);
+
+export const createCardSuccess = createAction(
+  `${ACTION_PREFIX} Create card success`,
+  props<{ card: Card }>()
+);
+
+export const createCardError = createAction(
+  `${ACTION_PREFIX} Create card error`,
+  props<{ error: string }>()
+);

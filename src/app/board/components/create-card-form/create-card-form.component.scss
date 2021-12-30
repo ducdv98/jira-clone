@@ -1,0 +1,15 @@
+.btn-create-issue {
+  @apply block rounded flex flex-row items-center gap-1 px-4 py-2 w-full text-textDark font-medium hover:bg-backgroundDark;
+}
+
+.create-issue-form {
+  @apply rounded p-3 transition-colors bg-white shadow border-blue-550 border-2 cursor-pointer;
+
+  textarea {
+    @apply w-full text-sm p-0 resize-none outline-none border-0 focus:border-transparent focus:shadow-none focus:outline-none focus:ring-0;
+  }
+
+  .issue-type-dropdown {
+    @apply h-8;
+  }
+}

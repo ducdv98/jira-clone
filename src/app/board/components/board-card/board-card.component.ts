@@ -9,10 +9,12 @@ import { CardTypesEnum } from '@app/core/enums';
 })
 export class BoardCardComponent implements OnInit {
   @Input() card!: Card;
+  @Input() loading: boolean = false;
 
   CardTypes = CardTypesEnum;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

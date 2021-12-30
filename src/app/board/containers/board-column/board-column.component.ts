@@ -1,10 +1,12 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
+import { nanoid } from 'nanoid';
 
 import { Card, Column } from '@app/core/interfaces';
 import * as fromStore from '@app/core/store';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-board-column',
@@ -15,11 +17,13 @@ export class BoardColumnComponent implements OnInit, OnChanges {
   @Input() column!: Column;
 
   cards$!: Observable<Array<Card>>;
+  loadingCardIds$!: Observable<Array<string>>;
 
   constructor(private store: Store<fromStore.AppState>) {
   }
 
   ngOnInit(): void {
+    this.loadingCardIds$ = this.store.pipe(select(fromStore.selectLoadingCardIds));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -37,6 +41,16 @@ export class BoardColumnComponent implements OnInit, OnChanges {
         columnId: event.container.id
       }));
     }
+  }
+
+  onCreateCard(card: Card): void {
+    const newCard: Card = {
+      ...card,
+      columnId: this.column.id,
+      id: nanoid()
+    };
+
+    this.store.dispatch(fromStore.createCard({ card: newCard }));
   }
 
 }

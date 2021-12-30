@@ -25,9 +25,5 @@
 
   .board-column-footer {
     @apply p-1.5;
-
-    .btn-create-issue {
-      @apply block rounded flex flex-row items-center gap-1 px-4 py-2 w-full text-textDark font-medium hover:bg-backgroundDark;
-    }
   }
 }
