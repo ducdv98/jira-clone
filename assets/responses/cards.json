@@ -5,7 +5,12 @@
     "title": "Merry Christmas",
     "type": "TASK",
     "columnId": "f35ae884-5f3d-11ec-bf63-0242ac130002",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas molestie porta. Donec at efficitur urna. Phasellus consectetur, metus ac ornare tristique, nisi turpis tristique justo, nec varius felis augue at sem. In iaculis pretium ipsum nec mollis."
+    "priority": "Medium",
+    "assigneeIds": ["BbTGHY", "Hl3iOr"],
+    "reporterId": "BbTGHY",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas molestie porta. Donec at efficitur urna. Phasellus consectetur, metus ac ornare tristique, nisi turpis tristique justo, nec varius felis augue at sem. In iaculis pretium ipsum nec mollis.",
+    "createdAt": "2021-11-04T17:00:00.000Z",
+    "updatedAt": "2021-11-04T17:45:00.000Z"
   },
   {
     "id": "LZf678FzPPR4NNrgjlWDxn",
@@ -13,7 +18,12 @@
     "title": "That must be done!",
     "type": "TASK",
     "columnId": "f35ae884-5f3d-11ec-bf63-0242ac130002",
-    "description": "Cras ut orci nec risus ullamcorper vehicula. Mauris porttitor lacinia nisl, in fermentum massa lobortis et. Vestibulum scelerisque condimentum velit, vel bibendum libero pellentesque sit amet."
+    "priority": "Highest",
+    "assigneeIds": ["BbTGHY", "Hl3iOr"],
+    "reporterId": "BbTGHY",
+    "description": "Cras ut orci nec risus ullamcorper vehicula. Mauris porttitor lacinia nisl, in fermentum massa lobortis et. Vestibulum scelerisque condimentum velit, vel bibendum libero pellentesque sit amet.",
+    "createdAt": "2021-11-05T11:00:00.000Z",
+    "updatedAt": "2021-11-05T13:22:00.000Z"
   },
   {
     "id": "LZf678FzPPR4NNr766xn",
@@ -21,7 +31,12 @@
     "title": "We need to take a break.",
     "type": "BUG",
     "columnId": "00a34018-5f3e-11ec-bf63-0242ac130002",
-    "description": "Donec ultrices tristique quam eget commodo. Donec ut malesuada odio. Integer semper neque sit amet dolor sagittis malesuada. Sed elementum libero eros, sed elementum ligula gravida at."
+    "priority": "Lowest",
+    "assigneeIds": ["wUfAl6"],
+    "reporterId": "wUfAl6",
+    "description": "Donec ultrices tristique quam eget commodo. Donec ut malesuada odio. Integer semper neque sit amet dolor sagittis malesuada. Sed elementum libero eros, sed elementum ligula gravida at.",
+    "createdAt": "2021-11-06T05:00:00.000Z",
+    "updatedAt": "2021-11-06T06:53:00.000Z"
   },
   {
     "id": "V1StGXR8_Z5jdHi6B-myT",
@@ -29,7 +44,12 @@
     "title": "This is the first version of Angular Jira Clone",
     "type": "TASK",
     "columnId": "f35ae884-5f3d-11ec-bf63-0242ac130002",
-    "description": "Donec fermentum lorem vel dui porta tincidunt. Sed porta nisl sed ex sagittis suscipit. Vestibulum rutrum bibendum aliquet. Morbi ultrices molestie leo aliquet congue."
+    "priority": "Low",
+    "assigneeIds": ["wUfAl6", "Hl3iOr"],
+    "reporterId": "Hl3iOr",
+    "description": "Donec fermentum lorem vel dui porta tincidunt. Sed porta nisl sed ex sagittis suscipit. Vestibulum rutrum bibendum aliquet. Morbi ultrices molestie leo aliquet congue.",
+    "createdAt": "2021-11-22T05:12:00.000Z",
+    "updatedAt": "2021-11-22T11:33:00.000Z"
   },
   {
     "id": "Uakgb_J5m9g-0JDMbcJqLJ",
@@ -37,7 +57,12 @@
     "title": "The Tet holiday is coming...",
     "type": "STORY",
     "columnId": "f35ae884-5f3d-11ec-bf63-0242ac130002",
-    "description": "Donec fermentum lorem vel dui porta tincidunt. Sed porta nisl sed ex sagittis suscipit. Vestibulum rutrum bibendum aliquet. Morbi ultrices molestie leo aliquet congue."
+    "priority": "High",
+    "assigneeIds": ["wUfAl6"],
+    "reporterId": "wUfAl6",
+    "description": "Donec fermentum lorem vel dui porta tincidunt. Sed porta nisl sed ex sagittis suscipit. Vestibulum rutrum bibendum aliquet. Morbi ultrices molestie leo aliquet congue.",
+    "createdAt": "2021-11-23T02:14:00.000Z",
+    "updatedAt": "2021-11-23T07:16:00.000Z"
   },
   {
     "id": "Uakgb_J5m9g-0J4554qLJ",
@@ -45,14 +70,24 @@
     "title": "Go to the cinema to watch: Spider Man 2: No way home",
     "type": "TASK",
     "columnId": "048d7072-5f3e-11ec-bf63-0242ac130002",
-    "description": "Quisque quis lorem vitae ante mollis semper. Vivamus facilisis dui sit amet ornare gravida. Nulla mattis sapien nec elit varius, vitae vestibulum neque sagittis."
+    "priority": "High",
+    "assigneeIds": ["wUfAl6", "47zKI3"],
+    "reporterId": "47zKI3",
+    "description": "Quisque quis lorem vitae ante mollis semper. Vivamus facilisis dui sit amet ornare gravida. Nulla mattis sapien nec elit varius, vitae vestibulum neque sagittis.",
+    "createdAt": "2021-11-26T04:00:00.000Z",
+    "updatedAt": "2021-11-26T15:09:00.000Z"
   },
   {
     "id": "Uaeryy-0J4554qLJ",
     "ordinalId": 7,
     "title": "Go homeeeeeeeeeeeeeeeee!!!",
     "type": "TASK",
+    "priority": "Medium",
     "columnId": "f35ae884-5f3d-11ec-bf63-0242ac130002",
-    "description": "Quisque quis lorem vitae ante mollis semper. Vivamus facilisis dui sit amet ornare gravida. Nulla mattis sapien nec elit varius, vitae vestibulum neque sagittis."
+    "assigneeIds": ["47zKI3"],
+    "reporterId": "47zKI3",
+    "description": "Quisque quis lorem vitae ante mollis semper. Vivamus facilisis dui sit amet ornare gravida. Nulla mattis sapien nec elit varius, vitae vestibulum neque sagittis.",
+    "createdAt": "2021-12-01T11:00:00.000Z",
+    "updatedAt": "2021-12-01T12:22:00.000Z"
   }
 ]
