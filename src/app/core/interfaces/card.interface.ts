@@ -7,6 +7,6 @@ export interface Card {
   type: CardTypesEnum;
   columnId: string;
   description?: string;
-  createdAt: number;
-  updatedAt: number;
+  createdAt: string;
+  updatedAt: string;
 }

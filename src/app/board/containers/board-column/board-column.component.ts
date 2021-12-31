@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
@@ -19,7 +20,8 @@ export class BoardColumnComponent implements OnInit, OnChanges {
   cards$!: Observable<Array<Card>>;
   loadingCardIds$!: Observable<Array<string>>;
 
-  constructor(private store: Store<fromStore.AppState>) {
+  constructor(private router: Router,
+              private store: Store<fromStore.AppState>) {
   }
 
   ngOnInit(): void {
@@ -51,6 +53,13 @@ export class BoardColumnComponent implements OnInit, OnChanges {
     };
 
     this.store.dispatch(fromStore.createCard({ card: newCard }));
+  }
+
+  createComponentModal(id: string): void {
+    this.router.navigate(
+      ['/board'],
+      { queryParams: { selectedIssue: id } }
+    );
   }
 
 }

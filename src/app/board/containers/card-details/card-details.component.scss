@@ -1,0 +1,21 @@
+.card-details-modal {
+  .card-details-modal-header {
+    @apply flex flex-row justify-between items-center;
+
+    .actions {
+      @apply flex flex-row items-center gap-3;
+    }
+  }
+
+  .card-details-modal-content {
+    @apply flex flex-row mt-4;
+
+    .detail-item {
+      @apply w-full flex justify-between text-xs h-6 items-center;
+
+      .title {
+        @apply font-medium text-textDark;
+      }
+    }
+  }
+}

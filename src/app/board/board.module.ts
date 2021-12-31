@@ -8,6 +8,8 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 import { BoardContainerComponent, containers } from './containers';
 import { components } from './components';
@@ -37,6 +39,8 @@ const routes: Routes = [
     NzSelectModule,
     NzIconModule,
     NzDividerModule,
+    NzModalModule,
+    NzCollapseModule,
 
     AutofocusModule,
     AvatarModule,

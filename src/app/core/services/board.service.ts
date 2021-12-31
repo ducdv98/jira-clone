@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { delay, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
-import { Card, Column } from '@app/core/interfaces';
+import { Card, Column, User } from '@app/core/interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class BoardService {
@@ -25,6 +25,15 @@ export class BoardService {
 
     return this.httpClient.get(apiUrl).pipe(
       map(r => r as Card[]),
+      delay(1000)
+    );
+  }
+
+  getUsers(): Observable<Array<User>> {
+    const apiUrl = `./assets/responses/users.json`;
+
+    return this.httpClient.get(apiUrl).pipe(
+      map(r => r as User[]),
       delay(1000)
     );
   }

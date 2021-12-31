@@ -1,0 +1,181 @@
+<div class="card-details-modal">
+  <div class="card-details-modal-header">
+    <div>Demo 13</div>
+    <div class="actions">
+      <button class="square-button">
+        <app-svg-icon name="lock" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
+      </button>
+
+      <button class="square-button flex items-center">
+        <app-svg-icon name="eye" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
+        <span class="pr-1.5">1</span>
+      </button>
+
+      <button class="square-button">
+        <app-svg-icon name="thumbup" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
+      </button>
+
+      <button class="square-button">
+        <app-svg-icon name="share" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
+      </button>
+
+      <button class="square-button">
+        <app-svg-icon name="threedot" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
+      </button>
+
+      <button class="square-button">
+        <app-svg-icon name="close" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
+      </button>
+
+    </div>
+  </div>
+  <div class="card-details-modal-content">
+    <div class="w-3/5 pr-6">
+      <div class="text-2xl font-medium">Day la title</div>
+      <div class="flex gap-2 mt-4">
+        <button class="raise-button">
+          <app-svg-icon name="attach" [width]="24" [height]="24"></app-svg-icon>
+          <div class="font-medium">Attach</div>
+        </button>
+
+        <button class="raise-button">
+          <app-svg-icon name="hierarchy" [width]="24" [height]="24"></app-svg-icon>
+          <div class="font-medium">Add a child issue</div>
+        </button>
+
+        <button class="raise-button">
+          <app-svg-icon name="link" [width]="24" [height]="24"></app-svg-icon>
+          <div class="font-medium">Link issue</div>
+        </button>
+
+        <button class="raise-button">
+          <app-svg-icon name="threedot" [width]="24" [height]="24"></app-svg-icon>
+        </button>
+      </div>
+      <div class="flex flex-col my-4 gap-2">
+        <div class="font-medium text-textDark">Description</div>
+        <div class="h-12">Some description</div>
+      </div>
+      <div class="flex flex-col my-4 gap-2">
+        <div class="font-medium text-textDark">Activity</div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <div class="mr-4">Show:</div>
+            <div class="flex gap-2">
+              <button class="raise-button raise-button-sm font-medium text-textDark leading-5">All</button>
+              <button class="raise-button raise-button-sm font-medium text-textDark leading-5">Comment</button>
+              <button class="raise-button raise-button-sm font-medium text-textDark leading-5">History</button>
+              <button class="raise-button raise-button-sm font-medium text-textDark leading-5">Work log</button>
+            </div>
+          </div>
+
+          <button class="square-button flex items-center px-2 gap-1 font-medium text-textDark">
+            <div>Newest first</div>
+            <app-svg-icon name="descending"></app-svg-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="w-2/5 pl-4">
+      <div class="card-column-dropdown">
+        <nz-select [nzCustomTemplate]="defaultTemplate" [nzDropdownMatchSelectWidth]="false"
+                   [nzDropdownRender]="renderTemplate"
+                   nzBorderless
+                   [nzOptionHeightPx]="40"
+                   [nzSuffixIcon]="customDropdownIcon"
+                   class="w-32 bg-indigo-500 rounded">
+          <nz-option nzCustomContent [nzLabel]="c.name" [nzValue]="c.id"
+                     *ngFor="let c of columns">
+            <div class="flex flex-row pt-1.5">
+              <div class="leading-none capitalize">{{c.name}}</div>
+            </div>
+          </nz-option>
+        </nz-select>
+
+        <ng-template #renderTemplate>
+          <button class="border-t border-gray-550 px-4 py-2">
+            View workflow
+          </button>
+        </ng-template>
+
+        <ng-template #defaultTemplate let-selected>
+          <div class="bg-transparent text-white">{{selected.nzLabel}}</div>
+        </ng-template>
+
+        <ng-template #customDropdownIcon>
+          <app-svg-icon class="text-textDark" name="arrowDown" [width]="24" [height]="24"></app-svg-icon>
+        </ng-template>
+      </div>
+      <nz-collapse class="mt-4 card-details-panel rounded">
+        <nz-collapse-panel
+          [nzShowArrow]="false"
+          [nzHeader]="header"
+          [nzActive]="true">
+          <div class="flex gap-4 flex-col">
+            <div class="detail-item">
+              <div class="title">Assignee</div>
+              <div>abc</div>
+            </div>
+
+            <div class="detail-item">
+              <div class="title">Time tracking</div>
+              <div>abc</div>
+            </div>
+
+            <div class="detail-item">
+              <div class="title">Priority</div>
+              <div>abc</div>
+            </div>
+
+            <div class="detail-item">
+              <div class="title">Labels</div>
+              <div>abc</div>
+            </div>
+
+            <div class="detail-item">
+              <div class="title">Start date</div>
+              <div>abc</div>
+            </div>
+
+            <div class="detail-item">
+              <div class="title">Due date</div>
+              <div>abc</div>
+            </div>
+
+            <div class="detail-item">
+              <div class="title">Original estimate</div>
+              <div>abc</div>
+            </div>
+
+            <div class="detail-item">
+              <div class="title">Reporter</div>
+              <div>abc</div>
+            </div>
+          </div>
+        </nz-collapse-panel>
+      </nz-collapse>
+      <div class="flex justify-between items-center">
+        <div class="mt-4 text-textGray text-xs flex flex-col gap-1">
+          <div>
+            Created December 5, 2021, 2:01 PM
+          </div>
+
+          <div>
+            Updated 1 hour ago
+          </div>
+        </div>
+        <button class="square-button flex p-1 text-textDark font-medium">
+          <app-svg-icon name="config" [width]="24" [height]="24"></app-svg-icon>
+          Configure
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #header>
+  <div class="w-full flex justify-between font-medium text-textDark">
+    Details
+    <app-svg-icon name="arrowDown" class="inline-block" [width]="24" [height]="24"></app-svg-icon>
+  </div>
+</ng-template>

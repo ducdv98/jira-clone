@@ -101,6 +101,7 @@ module.exports = {
         primary: '#0052CC',
         tertiary: '#e6e9f0',
         textHeader: '#344563',
+        textGray: '#6b778c',
         textDarkest: '#172b4d',
         textDark: '#42526E',
         textMedium: '#5E6C84',
@@ -115,6 +116,7 @@ module.exports = {
         backgroundLightPrimary: '#D2E5FE',
         backgroundLightSuccess: '#E4FCEF',
         backgroundDark: '#091e4214',
+        backgroundGray: '#f5f6f8',
 
         borderLightest: '#dfe1e6',
         borderLight: '#C1C7D0',

@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Card } from '@app/core/interfaces';
 import { CardTypesEnum } from '@app/core/enums';
+import { environment } from '@app/env';
 
 @Component({
   selector: 'app-board-card',
@@ -10,13 +11,19 @@ import { CardTypesEnum } from '@app/core/enums';
 export class BoardCardComponent implements OnInit {
   @Input() card!: Card;
   @Input() loading: boolean = false;
+  @Output() goToDetails = new EventEmitter<string>();
 
   CardTypes = CardTypesEnum;
+  environment = environment;
 
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  onCardClick(): void {
+    this.goToDetails.emit(this.card.id);
   }
 
 }

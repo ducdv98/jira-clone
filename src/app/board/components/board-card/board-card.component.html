@@ -1,4 +1,4 @@
-<div class="board-card" [ngClass]="{'opacity-50': loading}">
+<button class="board-card" [ngClass]="{'opacity-50': loading}" (click)="onCardClick()">
   <div class="flex flex-row justify-between">
     <div class="board-card-name">{{card.title}}</div>
     <button class="square-button">
@@ -12,7 +12,8 @@
         <app-svg-icon *ngSwitchCase="CardTypes.BUG" name="bug" [width]="24" [height]="24"></app-svg-icon>
         <app-svg-icon *ngSwitchCase="CardTypes.STORY" name="story" [width]="24" [height]="24"></app-svg-icon>
       </ng-container>
-      <div class="uppercase text-xs text-textDark" *ngIf="card.ordinalId">Demo-{{card.ordinalId}}</div>
+      <div class="uppercase text-xs text-textDark" *ngIf="card.ordinalId">
+        {{environment.boardName}} - {{card.ordinalId}}</div>
     </div>
 
     <app-svg-icon *ngIf="loading"
@@ -21,4 +22,4 @@
                   fill="#fff">
     </app-svg-icon>
   </div>
-</div>
+</button>

@@ -46,3 +46,8 @@ export const createCardError = createAction(
   `${ACTION_PREFIX} Create card error`,
   props<{ error: string }>()
 );
+
+export const setSelectedCardId = createAction(
+  `${ACTION_PREFIX} Set selected card`,
+  props<{ id: string | null }>()
+);

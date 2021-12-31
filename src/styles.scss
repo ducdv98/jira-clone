@@ -2,8 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.square-button {
-  @apply w-8 h-8 text-textDark rounded hover:bg-backgroundDark;
+.ant-modal-mask {
+  background-color: #091e428a;
 }
 
 /* Animate items as they're being sorted. */
@@ -16,14 +16,41 @@
   transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.issue-type-dropdown {
-  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    @apply p-0 py-1.5 hover:bg-backgroundDark;
-  }
+.square-button {
+  @apply h-8 text-textDark rounded hover:bg-backgroundDark;
+}
 
+.raise-button {
+  @apply flex h-8 bg-backgroundGray px-1.5 py-1 rounded-sm text-textDark gap-1 hover:bg-backgroundDark;
+
+  &.raise-button-sm {
+    @apply h-6 px-1.5 py-0.5;
+  }
+}
+
+.issue-type-dropdown, .card-column-dropdown {
   .ant-select-arrow, .ant-select-clear {
     top: 25%;
     right: 20px;
   }
 }
 
+.issue-type-dropdown {
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    @apply p-0 py-1.5 hover:bg-backgroundDark;
+  }
+}
+
+.card-details-panel {
+  .ant-collapse-header {
+    @apply bg-white rounded;
+
+    border-radius: 0.25rem 0.25rem 0 0 !important;
+    padding: 0.5rem 0.625rem !important;
+  }
+
+  .ant-collapse-content>.ant-collapse-content-box {
+    @apply px-4 py-1;
+    border-radius: 0 0 0.25rem 0.25rem !important;
+  }
+}

@@ -20,7 +20,9 @@
                     cdkDrag
                     [loading]="(loadingCardIds$ | async)?.includes(card.id) || false"
                     [cdkDragData]="card.id"
-                    [card]="card"></app-board-card>
+                    [card]="card"
+                    (goToDetails)="createComponentModal($event)"
+    ></app-board-card>
   </div>
   <div class="board-column-footer">
     <app-create-card-form (createCard)="onCreateCard($event)"></app-create-card-form>

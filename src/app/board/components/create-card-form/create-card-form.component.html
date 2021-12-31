@@ -22,11 +22,12 @@
                  [nzSuffixIcon]="customDropdownIcon"
                  formControlName="type"
                  class="w-12">
-        <nz-option nzCustomContent [nzLabel]="type.icon" [nzValue]="type.label"
-                   *ngFor="let type of cardTypes">
+        <nz-option nzCustomContent [nzLabel]="t.icon" [nzValue]="t.label"
+                   [nzHide]="type?.value === t.label"
+                   *ngFor="let t of cardTypes">
           <div class="flex flex-row pt-1.5">
-            <app-svg-icon [name]="type.icon" [height]="24" [width]="24"></app-svg-icon>
-            <div class="leading-none capitalize">{{type.label}}</div>
+            <app-svg-icon [name]="t.icon" [height]="24" [width]="24"></app-svg-icon>
+            <div class="leading-none capitalize">{{t.label}}</div>
           </div>
         </nz-option>
       </nz-select>
