@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { nanoid } from 'nanoid';
 
-import { Card, Column } from '@app/core/interfaces';
+import { Card, Column, PartialCard } from '@app/core/interfaces';
 import * as fromStore from '@app/core/store';
 
 @Component({
@@ -38,10 +38,12 @@ export class BoardColumnComponent implements OnInit, OnChanges {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      this.store.dispatch(fromStore.updateCardColumn({
-        cardId: event.item.data,
+      const partial: PartialCard = {
+        id: event.item.data,
         columnId: event.container.id
-      }));
+      };
+
+      this.store.dispatch(fromStore.updateCard({ partial }));
     }
   }
 

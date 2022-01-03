@@ -151,6 +151,9 @@ module.exports = {
         'zoom-in': 'zoom-in',
         'ew-resize': 'ew-resize'
       },
+      fontSize: {
+        'xxs': '11px',
+      }
     }
   },
   variants: {},

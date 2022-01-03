@@ -1,0 +1,105 @@
+<div class="card-column-dropdown">
+  <nz-select [nzCustomTemplate]="defaultTemplate" [nzDropdownMatchSelectWidth]="false"
+             [nzDropdownRender]="renderTemplate"
+             nzBorderless
+             [nzSuffixIcon]="customDropdownIcon"
+             [formControl]="columnControl"
+             class="w-auto rounded"
+             [style.background-color]="getColumnDropdownBackgroundColor()"
+             [style.color]="getColumnDropdownColor()">
+    <nz-option nzCustomContent [nzLabel]="c.name" [nzValue]="c.id"
+               *ngFor="let c of columns">
+      <div class="w-48">
+              <span class="uppercase bg-blue-500 rounded px-1 py-0 text-xxs font-medium leading-none"
+                    [ngStyle]="{'backgroundColor': c.bgBadge, 'color': c.textColor}">
+              {{c.name}}
+            </span>
+      </div>
+    </nz-option>
+  </nz-select>
+
+  <ng-template #renderTemplate>
+    <button class="border-t border-gray-550 px-4 py-2 w-full text-left">
+      View workflow
+    </button>
+  </ng-template>
+
+  <ng-template #defaultTemplate let-selected>
+    <div class="bg-transparent capitalize font-medium">{{selected.nzLabel.toLowerCase()}}</div>
+  </ng-template>
+
+  <ng-template #customDropdownIcon>
+    <app-svg-icon [style.color]="getColumnDropdownColor()" name="arrowDown" [width]="24"
+                  [height]="24"></app-svg-icon>
+  </ng-template>
+</div>
+<nz-collapse class="mt-4 card-details-panel rounded">
+  <nz-collapse-panel
+    [nzShowArrow]="false"
+    [nzHeader]="header"
+    [nzActive]="true">
+    <div class="flex gap-4 flex-col">
+      <div class="detail-item">
+        <div class="title">Assignee</div>
+        <div>abc</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="title">Time tracking</div>
+        <div>abc</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="title">Priority</div>
+        <div>abc</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="title">Labels</div>
+        <div>abc</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="title">Start date</div>
+        <div>abc</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="title">Due date</div>
+        <div>abc</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="title">Original estimate</div>
+        <div>abc</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="title">Reporter</div>
+        <div>abc</div>
+      </div>
+    </div>
+  </nz-collapse-panel>
+</nz-collapse>
+<div class="flex justify-between items-center">
+  <div class="mt-4 text-textGray text-xs flex flex-col gap-1">
+    <div>
+      Created December 5, 2021, 2:01 PM
+    </div>
+
+    <div>
+      Updated 1 hour ago
+    </div>
+  </div>
+  <button class="square-button flex p-1 text-textDark font-medium">
+    <app-svg-icon name="config" [width]="24" [height]="24"></app-svg-icon>
+    Configure
+  </button>
+</div>
+
+<ng-template #header>
+  <div class="w-full flex justify-between font-medium text-textDark">
+    Details
+    <app-svg-icon name="arrowDown" class="inline-block" [width]="24" [height]="24"></app-svg-icon>
+  </div>
+</ng-template>

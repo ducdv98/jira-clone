@@ -8,7 +8,7 @@
   }
 
   .card-details-modal-content {
-    @apply flex flex-row mt-4;
+    @apply flex flex-row;
 
     .detail-item {
       @apply w-full flex justify-between text-xs h-6 items-center;

@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Card, Column } from '@app/core/interfaces';
+import { Card, Column, PartialCard } from '@app/core/interfaces';
 
 const ACTION_PREFIX = '[Cards]';
 
@@ -17,18 +17,18 @@ export const getCardsError = createAction(
   props<{ error: string }>()
 );
 
-export const updateCardColumn = createAction(
-  `${ACTION_PREFIX} Update card column`,
-  props<{ cardId: string; columnId: string }>()
+export const updateCard = createAction(
+  `${ACTION_PREFIX} Update card`,
+  props<{ partial: PartialCard }>()
 );
 
-export const updateCardColumnSuccess = createAction(
-  `${ACTION_PREFIX} Update card column success`,
-  props<{ cardId: string; columnId: string }>()
+export const updateCardSuccess = createAction(
+  `${ACTION_PREFIX} Update card success`,
+  props<{ partial: PartialCard }>()
 );
 
-export const updateCardColumnError = createAction(
-  `${ACTION_PREFIX} Update card column error`,
+export const updateCardError = createAction(
+  `${ACTION_PREFIX} Update card error`,
   props<{ error: string }>()
 );
 

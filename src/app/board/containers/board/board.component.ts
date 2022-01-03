@@ -52,6 +52,7 @@ export class BoardComponent implements OnInit {
       nzViewContainerRef: this.viewContainerRef,
       nzWidth: '85%',
       nzFooter: null,
+      nzStyle: { top: '5%' }
     });
 
     modal.afterOpen.subscribe(() => console.log('[afterOpen] emitted!'));

@@ -13,6 +13,11 @@ export const allCards = createSelector(
   selectAllCards,
 );
 
+export const allCardEntities = createSelector(
+  selectCardState,
+  selectCardEntities,
+);
+
 export const selectCardsByColumnId = (columnId: string) => createSelector(
   allCards,
   cards => {
@@ -32,4 +37,20 @@ export const selectLatestOrdinalId = createSelector(
 export const selectLoadingCardIds = createSelector(
   selectCardState,
   state => state.loadingCardIds
+);
+
+export const selectSelectedCardId = createSelector(
+  selectCardState,
+  state => state.selectedCardId
+);
+
+export const selectSelectedCard = createSelector(
+  allCardEntities,
+  selectSelectedCardId,
+  (entities, id) => {
+    if (entities && id) {
+      return entities[id];
+    }
+    return null;
+  }
 );

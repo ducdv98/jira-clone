@@ -1,0 +1,13 @@
+<textarea [formControl]="titleControl"
+          [inlineInputControls]="controlPanel"
+          class="textarea-inline">
+</textarea>
+
+<app-input-control-panel #controlPanel>
+  <button class="input-control-item" (click)="onSubmit()">
+    <app-svg-icon name="check" [width]="16" [height]="16"></app-svg-icon>
+  </button>
+  <button class="input-control-item" (click)="onCancel()">
+    <app-svg-icon name="close" [width]="16" [height]="16"></app-svg-icon>
+  </button>
+</app-input-control-panel>

@@ -35,20 +35,20 @@ const reducer = createReducer(
     state.error = error;
   }),
 
-  on(actions.updateCardColumn, (state, { columnId, cardId }) => {
-    const card = { ...state.entities[cardId] };
+  on(actions.updateCard, (state, { partial }) => {
+    const card = { ...state.entities[partial.id] };
     return cardAdapter.updateOne({
-      id: cardId,
+      id: partial.id,
       changes: {
         ...card,
-        columnId,
+        ...partial,
       }
     }, { ...state, loading: true });
   }),
-  immerOn(actions.updateCardColumnSuccess, (state, { columnId, cardId }) => {
+  immerOn(actions.updateCardSuccess, (state, { partial }) => {
     state.loading = false;
   }),
-  immerOn(actions.updateCardColumnError, (state, { error }) => {
+  immerOn(actions.updateCardError, (state, { error }) => {
     state.loading = false;
     state.error = error;
   }),

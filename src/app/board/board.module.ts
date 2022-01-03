@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -16,6 +17,7 @@ import { components } from './components';
 import { SvgIconModule } from '@app/shared/components/svg-icon/svg-icon.module';
 import { AvatarModule } from '@app/shared/components/avatar/avatar.module';
 import { AutofocusModule, TextareaSubmitOnEnterModule, ClickOutsideModule } from '@app/shared/directives';
+import { InlineInputControlsModule } from '@app/shared/components/inline-input-controls/inline-input-controls.module';
 
 const routes: Routes = [
   {
@@ -34,6 +36,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ReactiveFormsModule,
     DragDropModule,
+    TextFieldModule,
 
     NzBreadCrumbModule,
     NzSelectModule,
@@ -47,6 +50,7 @@ const routes: Routes = [
     SvgIconModule,
     TextareaSubmitOnEnterModule,
     ClickOutsideModule,
+    InlineInputControlsModule,
   ]
 })
 export class BoardModule {
