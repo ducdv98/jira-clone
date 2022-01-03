@@ -1,18 +1,34 @@
 [
   {
     "id": "f35ae884-5f3d-11ec-bf63-0242ac130002",
-    "name": "TODO"
+    "name": "TO DO",
+    "bgBadge": "#dfe1e6",
+    "textColor": "#42526e",
+    "bgButton": "#dfe1e6",
+    "color": "#172b4d"
   },
   {
     "id": "00a34018-5f3e-11ec-bf63-0242ac130002",
-    "name": "DOING"
+    "name": "IN PROGRESS",
+    "bgBadge": "#deebff",
+    "textColor": "#0747a6",
+    "bgButton": "#0052cc",
+    "color": "#fff"
   },
   {
     "id": "048d7072-5f3e-11ec-bf63-0242ac130002",
-    "name": "DONE"
+    "name": "DONE",
+    "textColor": "#006644",
+    "bgBadge": "#e3fcef",
+    "bgButton": "#00875a",
+    "color": "#fff"
   },
   {
     "id": "0947554c-5f3e-11ec-bf63-0242ac130002",
-    "name": "IN PRODUCTION"
+    "name": "IN PRODUCTION",
+    "textColor": "#0747a6",
+    "bgBadge": "#deebff",
+    "bgButton": "#0052cc",
+    "color": "#fff"
   }
 ]
