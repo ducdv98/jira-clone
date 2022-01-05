@@ -6,6 +6,10 @@ export interface Card {
   title: string;
   type: CardTypesEnum;
   columnId: string;
+  priority: string;
+  assigneeId: string;
+  reporterId: string;
+  labels: Array<string>;
   description?: string;
   createdAt: string;
   updatedAt: string;
@@ -18,4 +22,8 @@ export interface PartialCard {
   type?: CardTypesEnum;
   columnId?: string;
   description?: string;
+  priority?: string;
+  assigneeId?: string;
+  reporterId?: string;
+  labels?: Array<string>;
 }

@@ -43,4 +43,13 @@ export class BoardService {
       delay(1000)
     );
   }
+
+  getTags(): Observable<Array<string>> {
+    const apiUrl = `./assets/responses/labels.json`;
+
+    return this.httpClient.get(apiUrl).pipe(
+      map(r => r as string[]),
+      delay(1000)
+    );
+  }
 }

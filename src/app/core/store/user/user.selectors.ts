@@ -12,3 +12,25 @@ export const allUsers = createSelector(
   selectUserState,
   selectAllUsers,
 );
+
+export const selectUsersByIds = (ids: Array<string> | undefined) => createSelector(
+  allUsers,
+  users => {
+    if (!!users && !!ids) {
+      return users.filter(u => ids.includes(u.id));
+    }
+
+    return [];
+  }
+);
+
+export const selectUserById = (id: string | undefined) => createSelector(
+  allUsers,
+  users => {
+    if (!!users && !!id) {
+      return users.find(u => u.id === id);
+    }
+
+    return null;
+  }
+);

@@ -18,6 +18,8 @@ import { SvgIconModule } from '@app/shared/components/svg-icon/svg-icon.module';
 import { AvatarModule } from '@app/shared/components/avatar/avatar.module';
 import { AutofocusModule, TextareaSubmitOnEnterModule, ClickOutsideModule } from '@app/shared/directives';
 import { InlineInputControlsModule } from '@app/shared/components/inline-input-controls/inline-input-controls.module';
+import { CardLabelComponent } from './components/card-label/card-label.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 const routes: Routes = [
   {
@@ -30,6 +32,7 @@ const routes: Routes = [
   declarations: [
     containers,
     components,
+    CardLabelComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +54,7 @@ const routes: Routes = [
     TextareaSubmitOnEnterModule,
     ClickOutsideModule,
     InlineInputControlsModule,
+    NzTagModule,
   ]
 })
 export class BoardModule {

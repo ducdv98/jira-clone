@@ -51,3 +51,17 @@ export const setSelectedCardId = createAction(
   `${ACTION_PREFIX} Set selected card`,
   props<{ id: string | null }>()
 );
+
+export const getLabels = createAction(
+  `${ACTION_PREFIX} Get labels`,
+);
+
+export const getLabelsSuccess = createAction(
+  `${ACTION_PREFIX} Get labels success`,
+  props<{ labels: Array<string> }>()
+);
+
+export const getLabelsError = createAction(
+  `${ACTION_PREFIX} Get labels error`,
+  props<{ error: string }>()
+);

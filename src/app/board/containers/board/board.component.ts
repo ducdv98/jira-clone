@@ -5,6 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { filter, map } from 'rxjs/operators';
+import { NzModalRef } from 'ng-zorro-antd/modal/modal-ref';
 
 import * as fromStore from '@app/core/store';
 import { Column } from '@app/core/interfaces';
@@ -19,6 +20,7 @@ import { Destroyable, takeUntilDestroyed } from '@app/shared/utils';
 })
 export class BoardComponent implements OnInit {
   columns$!: Observable<Array<Column>>;
+  modalRef!: NzModalRef;
 
   constructor(private store: Store<fromStore.AppState>,
               private activatedRoute: ActivatedRoute,
@@ -31,6 +33,7 @@ export class BoardComponent implements OnInit {
     this.store.dispatch(fromStore.getCards());
     this.store.dispatch(fromStore.getColumns());
     this.store.dispatch(fromStore.getUsers());
+    this.store.dispatch(fromStore.getLabels());
 
     this.columns$ = this.store.pipe(select(fromStore.allColumns));
 
@@ -42,21 +45,29 @@ export class BoardComponent implements OnInit {
       this.store.dispatch(fromStore.setSelectedCardId({ id }));
       this.openCardDetailsModal();
     });
+
+    this.activatedRoute.queryParams.pipe(
+      filter(params => !params?.selectedIssue),
+      takeUntilDestroyed(this)
+    ).subscribe((id) => {
+      if (this.modalRef) {
+        this.modalRef.close();
+      }
+    });
   }
 
   openCardDetailsModal(): void {
-    const modal = this.modal.create({
+    this.modalRef = this.modal.create({
       nzContent: CardDetailsComponent,
       nzClosable: false,
       nzAutofocus: null,
       nzViewContainerRef: this.viewContainerRef,
       nzWidth: '85%',
       nzFooter: null,
-      nzStyle: { top: '5%' }
+      nzStyle: { top: '5%' },
     });
 
-    modal.afterOpen.subscribe(() => console.log('[afterOpen] emitted!'));
-    modal.afterClose.subscribe(_ => {
+    this.modalRef.afterClose.subscribe(_ => {
       this.router.navigate(['/board']);
       this.store.dispatch(fromStore.setSelectedCardId({ id: null }));
     });

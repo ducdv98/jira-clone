@@ -7,6 +7,7 @@ import * as fromStore from '@app/core/store';
 import { Card, Column, PartialCard } from '@app/core/interfaces';
 import { Destroyable } from '@app/shared/utils';
 import { environment } from '@app/env';
+import { Router } from '@angular/router';
 
 @Destroyable()
 @Component({
@@ -20,7 +21,8 @@ export class CardDetailsComponent implements OnInit {
 
   environment = environment;
 
-  constructor(private store: Store<fromStore.AppState>) {
+  constructor(private store: Store<fromStore.AppState>,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -32,4 +34,7 @@ export class CardDetailsComponent implements OnInit {
     this.store.dispatch(fromStore.updateCard({ partial }));
   }
 
+  onCloseModal(): void {
+    this.router.navigate(['/board']);
+  }
 }

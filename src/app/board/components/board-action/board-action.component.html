@@ -9,12 +9,10 @@
     </div>
 
     <div class="contributors">
-      <app-avatar
-        tooltip="Anna"
-        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"></app-avatar>
-      <app-avatar
-        tooltip="Jasmine"
-        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"></app-avatar>
+      <app-avatar *ngFor="let user of users"
+                  [tooltip]="user.name"
+                  [src]="user.avatar">
+      </app-avatar>
     </div>
   </div>
 

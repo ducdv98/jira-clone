@@ -38,45 +38,44 @@
     [nzShowArrow]="false"
     [nzHeader]="header"
     [nzActive]="true">
-    <div class="flex gap-4 flex-col">
+    <div class="flex gap-4 flex-col" *ngIf="card">
       <div class="detail-item">
         <div class="title">Assignee</div>
-        <div>abc</div>
-      </div>
-
-      <div class="detail-item">
-        <div class="title">Time tracking</div>
-        <div>abc</div>
+        <app-card-assignee class="w-full"
+                           [users]="users$ | async"
+                           [cardId]="card.id"
+                           [assignee]="assignee$ | async"
+                           (updateAssignee)="onUpdateCard($event)">
+        </app-card-assignee>
       </div>
 
       <div class="detail-item">
         <div class="title">Priority</div>
-        <div>abc</div>
+        <app-card-priority class="w-full"
+                           [cardId]="card.id"
+                           [priority]="card.priority"
+                           (updatePriority)="onUpdateCard($event)">
+        </app-card-priority>
       </div>
 
-      <div class="detail-item">
+      <div class="detail-item items-start">
         <div class="title">Labels</div>
-        <div>abc</div>
-      </div>
-
-      <div class="detail-item">
-        <div class="title">Start date</div>
-        <div>abc</div>
-      </div>
-
-      <div class="detail-item">
-        <div class="title">Due date</div>
-        <div>abc</div>
-      </div>
-
-      <div class="detail-item">
-        <div class="title">Original estimate</div>
-        <div>abc</div>
+        <app-card-label class="w-full"
+                        [labels]="card.labels"
+                        [availableLabels]="labels$ | async"
+                        [cardId]="card.id"
+                        (updateLabels)="onUpdateCard($event)">
+        </app-card-label>
       </div>
 
       <div class="detail-item">
         <div class="title">Reporter</div>
-        <div>abc</div>
+        <app-card-reporter class="w-full"
+                           [users]="users$ | async"
+                           [cardId]="card.id"
+                           [reporter]="reporter$ | async"
+                           (updateReporter)="onUpdateCard($event)">
+        </app-card-reporter>
       </div>
     </div>
   </nz-collapse-panel>
@@ -84,11 +83,11 @@
 <div class="flex justify-between items-center">
   <div class="mt-4 text-textGray text-xs flex flex-col gap-1">
     <div>
-      Created December 5, 2021, 2:01 PM
+      Created {{card?.createdAt | date:'medium'}}
     </div>
 
     <div>
-      Updated 1 hour ago
+      Updated {{card?.updatedAt | date: 'medium'}}
     </div>
   </div>
   <button class="square-button flex p-1 text-textDark font-medium">

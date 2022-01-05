@@ -54,3 +54,8 @@ export const selectSelectedCard = createSelector(
     return null;
   }
 );
+
+export const allLabels = createSelector(
+  selectCardState,
+  state => state.labels
+);

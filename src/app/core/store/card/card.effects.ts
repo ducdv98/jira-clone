@@ -33,6 +33,17 @@ export class CardEffects {
     )
   );
 
+  getTags$ = createEffect(() => this.actions$.pipe(
+    ofType(actions.getLabels),
+    mergeMap(() => this.boardService.getTags()
+      .pipe(
+        map(tags => actions.getLabelsSuccess({ labels: tags }),
+          catchError((error) => of(actions.getLabelsError({ error })))
+        )
+      )
+    ))
+  );
+
   constructor(
     private actions$: Actions,
     private boardService: BoardService,

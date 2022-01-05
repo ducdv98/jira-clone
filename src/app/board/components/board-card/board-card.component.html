@@ -5,8 +5,8 @@
       <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
     </button>
   </div>
-  <div class="flex flex-row justify-between items-center w-full">
-    <div class="flex flex-row mt-4 font-medium items-start">
+  <div class="flex flex-row justify-between items-center w-full mt-4">
+    <div class="flex flex-row font-medium items-start">
       <ng-container [ngSwitch]="card.type">
         <app-svg-icon *ngSwitchCase="CardTypes.TASK" name="blueCheck" [width]="24" [height]="24"></app-svg-icon>
         <app-svg-icon *ngSwitchCase="CardTypes.BUG" name="bug" [width]="24" [height]="24"></app-svg-icon>
@@ -21,5 +21,25 @@
                   name="circleIndicator"
                   fill="#fff">
     </app-svg-icon>
+
+    <div class="flex flex-row items-center gap-2">
+      <ng-container [ngSwitch]="card.priority">
+        <app-svg-icon *ngSwitchCase="CardPriority.LOWEST" name="priorityLowest" [height]="16" [width]="16"
+                      fill="#0065ff"></app-svg-icon>
+        <app-svg-icon *ngSwitchCase="CardPriority.LOW" name="priorityLow" [height]="16" [width]="16"
+                      fill="#0065ff"></app-svg-icon>
+        <app-svg-icon *ngSwitchCase="CardPriority.MEDIUM" name="priorityMedium" [height]="16" [width]="16"
+                      fill="#FFAB00"></app-svg-icon>
+        <app-svg-icon *ngSwitchCase="CardPriority.HIGH" name="priorityHigh" [height]="16" [width]="16"
+                      fill="#ff5630"></app-svg-icon>
+        <app-svg-icon *ngSwitchCase="CardPriority.HIGHEST" name="priorityHighest" [height]="16" [width]="16"
+                      fill="#ff5630"></app-svg-icon>
+      </ng-container>
+
+      <ng-container *ngIf="assignee$ | async as assignee">
+        <app-avatar [src]="assignee.avatar" [size]="24" [tooltip]="assignee.name"></app-avatar>
+      </ng-container>
+    </div>
+
   </div>
 </button>

@@ -1,6 +1,6 @@
 <div class="flex flex-col w-full h-full">
   <app-board-heading></app-board-heading>
-  <app-board-action></app-board-action>
+  <app-board-action [users]="users$ | async"></app-board-action>
 
   <app-board></app-board>
 </div>

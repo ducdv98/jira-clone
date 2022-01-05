@@ -1,0 +1,7 @@
+.detail-item {
+  @apply flex items-center;
+
+  .title {
+    @apply w-2/5 text-textDark text-xs font-medium;
+  }
+}

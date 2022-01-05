@@ -1,0 +1,14 @@
+<nz-select nzMode="tags" nzBorderless class="w-full label-control"
+           nzAllowClear
+           [formControl]="labelsControl"
+           [nzCustomTemplate]="defaultTemplate"
+           [nzDropdownMatchSelectWidth]="false">
+  <nz-option *ngFor="let label of availableLabels"
+             [nzLabel]="label"
+             [nzValue]="label">
+  </nz-option>
+</nz-select>
+
+<ng-template #defaultTemplate let-selected>
+  <div class="h-full text-primary items-baseline mr-1 text-sm">{{selected.nzLabel}}</div>
+</ng-template>

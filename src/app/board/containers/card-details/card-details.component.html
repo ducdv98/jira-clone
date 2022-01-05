@@ -29,7 +29,7 @@
         <app-svg-icon name="threedot" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
       </button>
 
-      <button class="square-button">
+      <button class="square-button" (click)="onCloseModal()">
         <app-svg-icon name="close" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
       </button>
 
@@ -86,10 +86,7 @@
       </div>
     </div>
     <div class="w-2/5 pl-4 mt-4">
-      <app-card-details-panel [columns]="columns$ | async"
-                              [card]="selectedCard$ | async"
-                              (updateCardColumn)="onUpdateCard($event)">
-      </app-card-details-panel>
+      <app-card-details-panel></app-card-details-panel>
     </div>
   </div>
 </div>

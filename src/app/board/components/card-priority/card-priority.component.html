@@ -1,0 +1,27 @@
+<nz-select [nzCustomTemplate]="defaultTemplate" [nzDropdownMatchSelectWidth]="false"
+           nzBorderless
+           [nzSuffixIcon]="customDropdownIcon"
+           [formControl]="priorityControl"
+           [nzOptionHeightPx]="34"
+           [nzShowArrow]="false"
+           class="w-full priority-control">
+  <nz-option nzCustomContent [nzLabel]="p.icon" [nzValue]="p.name"
+             [nzHide]="p.name === priorityControl.value"
+             *ngFor="let p of CardPriorities">
+    <div class="flex gap-2 py-1">
+      <app-svg-icon [name]="p.icon" [height]="16" [width]="16"></app-svg-icon>
+      <div class="leading-none capitalize text-textDark">{{p.name}}</div>
+    </div>
+  </nz-option>
+</nz-select>
+
+<ng-template #defaultTemplate let-selected>
+  <div class="flex items-center gap-2">
+    <app-svg-icon [name]="selected.nzLabel" [height]="16" [width]="16"></app-svg-icon>
+    <div class="text-textDark">{{selected.nzValue}}</div>
+  </div>
+</ng-template>
+
+<ng-template #customDropdownIcon>
+  <app-svg-icon class="text-textDark" name="arrowDown" [width]="24" [height]="24"></app-svg-icon>
+</ng-template>
