@@ -1,0 +1,22 @@
+<div *ngIf="!editMode"
+     [innerHTML]="description"
+     class="hover:bg-backgroundDark p-2 rounded"
+     (click)="editMode = true">
+</div>
+
+<form *ngIf="editMode" [formGroup]="descriptionForm" (ngSubmit)="onUpdateDescription()">
+  <app-rich-text-editor formControlName="description"
+                        (blur)="editMode = false">
+  </app-rich-text-editor>
+  <div class="flex gap-2 mt-4">
+    <button type="submit"
+            class="bg-primary text-white font-medium rounded p-1.5 hover:opacity-90">
+      Save
+    </button>
+    <button type="button"
+            (click)="editMode = false"
+            class="bg-transparent text-textDark font-medium rounded p-1.5 hover:bg-backgroundGray">
+      Cancel
+    </button>
+  </div>
+</form>

@@ -1,5 +1,5 @@
 .board-card {
-  @apply rounded w-full block transition-colors bg-white p-3 shadow hover:bg-backgroundLightest cursor-pointer;
+  @apply rounded w-full block transition-colors bg-white p-3 shadow hover:bg-backgroundLightest cursor-pointer outline-none;
 
   .square-button {
     @apply invisible;

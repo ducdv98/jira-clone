@@ -1,6 +1,6 @@
 <div class="card-details-modal" *ngIf="selectedCard$ | async as card">
   <div class="card-details-modal-header">
-    <div class="flex flex-row items-center gap-2 ml-2">
+    <div class="flex flex-row items-center gap-2 ml-1.5">
       <div class="flex gap-1 items-center">
         <app-svg-icon name="thunk" [width]="20" [height]="20"></app-svg-icon>
         <a class="text-textGray uppercase text-xs">Demo Epic</a>
@@ -37,53 +37,7 @@
   </div>
   <div class="card-details-modal-content">
     <div class="w-3/5 pr-6 mt-4">
-      <app-card-title [title]="card.title"
-                      [cardId]="card.id"
-                      (onUpdateTitle)="onUpdateCard($event)">
-      </app-card-title>
-      <div class="flex gap-2 mt-4">
-        <button class="raise-button">
-          <app-svg-icon name="attach" [width]="24" [height]="24"></app-svg-icon>
-          <div class="font-medium">Attach</div>
-        </button>
-
-        <button class="raise-button">
-          <app-svg-icon name="hierarchy" [width]="24" [height]="24"></app-svg-icon>
-          <div class="font-medium">Add a child issue</div>
-        </button>
-
-        <button class="raise-button">
-          <app-svg-icon name="link" [width]="24" [height]="24"></app-svg-icon>
-          <div class="font-medium">Link issue</div>
-        </button>
-
-        <button class="raise-button">
-          <app-svg-icon name="threedot" [width]="24" [height]="24"></app-svg-icon>
-        </button>
-      </div>
-      <div class="flex flex-col my-4 gap-2">
-        <div class="font-medium text-textDark">Description</div>
-        <div class="h-12">Some description</div>
-      </div>
-      <div class="flex flex-col my-4 gap-2">
-        <div class="font-medium text-textDark">Activity</div>
-        <div class="flex items-center justify-between">
-          <div class="flex items-center">
-            <div class="mr-4">Show:</div>
-            <div class="flex gap-2">
-              <button class="raise-button raise-button-sm font-medium text-textDark leading-5">All</button>
-              <button class="raise-button raise-button-sm font-medium text-textDark leading-5">Comment</button>
-              <button class="raise-button raise-button-sm font-medium text-textDark leading-5">History</button>
-              <button class="raise-button raise-button-sm font-medium text-textDark leading-5">Work log</button>
-            </div>
-          </div>
-
-          <button class="square-button flex items-center px-2 gap-1 font-medium text-textDark">
-            <div>Newest first</div>
-            <app-svg-icon name="descending"></app-svg-icon>
-          </button>
-        </div>
-      </div>
+      <app-card-descriptions-panel></app-card-descriptions-panel>
     </div>
     <div class="w-2/5 pl-4 mt-4">
       <app-card-details-panel></app-card-details-panel>

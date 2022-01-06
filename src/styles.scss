@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+// Quill styles
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';
+
 .ant-modal-mask {
   background-color: #091e428a;
 }

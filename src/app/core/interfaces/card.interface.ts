@@ -10,7 +10,7 @@ export interface Card {
   assigneeId: string;
   reporterId: string;
   labels: Array<string>;
-  description?: string;
+  description: string;
   createdAt: string;
   updatedAt: string;
 }
