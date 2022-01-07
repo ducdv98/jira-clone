@@ -14,4 +14,8 @@
   .board-card-name {
     @apply text-left;
   }
+
+  .label {
+    @apply bg-backgroundGray text-textDark text-xs border-none px-1 py-0.5 rounded;
+  }
 }

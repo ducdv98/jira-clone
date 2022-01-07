@@ -30,6 +30,13 @@
                           (updateDescription)="onUpdateCard($event)">
     </app-card-description>
   </div>
+  <div class="flex flex-col my-4 gap-2">
+    <div class="font-medium text-textDark ml-1.5">Environment</div>
+    <app-card-environment [environment]="card.environment"
+                          [cardId]="card.id"
+                          (updateCardEnvironment)="onUpdateCard($event)">
+    </app-card-environment>
+  </div>
   <div class="flex flex-col my-4 gap-2 ml-1.5">
     <div class="font-medium text-textDark">Activity</div>
     <div class="flex items-center justify-between">

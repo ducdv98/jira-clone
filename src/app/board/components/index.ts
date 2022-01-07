@@ -8,6 +8,7 @@ import { CardAssigneeComponent } from './card-assignee/card-assignee.component';
 import { CardReporterComponent } from './card-reporter/card-reporter.component';
 import { CardLabelComponent } from './card-label/card-label.component';
 import { CardDescriptionComponent } from './card-description/card-description.component';
+import { CardEnvironmentComponent } from './card-environment/card-environment.component';
 
 export const components = [
   BoardHeadingComponent,
@@ -20,6 +21,7 @@ export const components = [
   CardReporterComponent,
   CardLabelComponent,
   CardDescriptionComponent,
+  CardEnvironmentComponent,
 ];
 
 export {
@@ -33,4 +35,5 @@ export {
   CardReporterComponent,
   CardLabelComponent,
   CardDescriptionComponent,
+  CardEnvironmentComponent,
 };
