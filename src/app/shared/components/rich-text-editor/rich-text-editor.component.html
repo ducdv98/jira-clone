@@ -3,6 +3,7 @@
               [placeholder]="''"
               (onContentChanged)="onContentChange($event)"
               (onFocus)="onFocus()"
+              (onEditorCreated)="editorCreated($event)"
               classes="font-sans text-sm"
               [styles]="{minHeight: '6rem'}">
 </quill-editor>

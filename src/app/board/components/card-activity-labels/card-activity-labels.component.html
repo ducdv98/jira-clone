@@ -1,0 +1,18 @@
+<div class="flex gap-2 flex-wrap">
+  <button class="label-button raise-button raise-button-sm" (click)="onChangeMode('all')"
+          [ngClass]="{'selected': mode === 'all'}">
+    All
+  </button>
+  <button class="label-button raise-button raise-button-sm" (click)="onChangeMode('comments')"
+          [ngClass]="{'selected': mode === 'comments'}">
+    Comment
+  </button>
+  <button class="label-button raise-button raise-button-sm" (click)="onChangeMode('history')"
+          [ngClass]="{'selected': mode === 'history'}">
+    History
+  </button>
+  <button class="label-button raise-button raise-button-sm" (click)="onChangeMode('worklog')"
+          [ngClass]="{'selected': mode === 'worklog'}">
+    Work log
+  </button>
+</div>

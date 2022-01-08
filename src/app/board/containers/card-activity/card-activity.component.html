@@ -1,0 +1,18 @@
+<div class="font-medium text-textDark">Activity</div>
+<div class="flex items-center justify-between">
+  <div class="flex items-center">
+    <div class="mr-4">Show:</div>
+    <app-card-activity-labels [formControl]="activityLabelControl"></app-card-activity-labels>
+  </div>
+
+  <button class="square-button flex items-center px-2 gap-1 font-medium text-textDark">
+    <div>Newest first</div>
+    <app-svg-icon name="descending"></app-svg-icon>
+  </button>
+</div>
+<div class="activity-container">
+  <app-comment-list [comments]="comments$ | async"
+                    [currentUser]="currentUser$ | async"
+                    (addComment)="onAddComment($event)">
+  </app-comment-list>
+</div>

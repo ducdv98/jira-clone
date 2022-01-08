@@ -1,5 +1,6 @@
 import { Component, EventEmitter, forwardRef, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import Quill from 'quill';
 
 import { QuillModules } from 'ngx-quill';
 import { ContentChange } from 'ngx-quill/lib/quill-editor.component';
@@ -72,5 +73,9 @@ export class RichTextEditorComponent implements OnInit, ControlValueAccessor {
 
   onBlur(): void {
     this.blur.emit();
+  }
+
+  editorCreated(editor: Quill): void {
+    editor.focus();
   }
 }

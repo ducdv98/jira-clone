@@ -9,6 +9,10 @@ import { CardReporterComponent } from './card-reporter/card-reporter.component';
 import { CardLabelComponent } from './card-label/card-label.component';
 import { CardDescriptionComponent } from './card-description/card-description.component';
 import { CardEnvironmentComponent } from './card-environment/card-environment.component';
+import { CardActivityLabelsComponent } from './card-activity-labels/card-activity-labels.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
+import { CommentListItemComponent } from './comment-list-item/comment-list-item.component';
+import { AddCommentFormComponent } from './add-comment-form/add-comment-form.component';
 
 export const components = [
   BoardHeadingComponent,
@@ -22,6 +26,10 @@ export const components = [
   CardLabelComponent,
   CardDescriptionComponent,
   CardEnvironmentComponent,
+  CardActivityLabelsComponent,
+  CommentListComponent,
+  CommentListItemComponent,
+  AddCommentFormComponent,
 ];
 
 export {
@@ -36,4 +44,8 @@ export {
   CardLabelComponent,
   CardDescriptionComponent,
   CardEnvironmentComponent,
+  CardActivityLabelsComponent,
+  CommentListComponent,
+  CommentListItemComponent,
+  AddCommentFormComponent,
 };

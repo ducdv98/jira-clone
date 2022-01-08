@@ -4,6 +4,7 @@ import { BoardColumnComponent } from './board-column/board-column.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import { CardDetailsPanelComponent } from './card-details-panel/card-details-panel.component';
 import { CardDescriptionsPanelComponent } from './card-descriptions-panel/card-descriptions-panel.component';
+import { CardActivityComponent } from './card-activity/card-activity.component';
 
 export const containers = [
   BoardComponent,
@@ -12,6 +13,7 @@ export const containers = [
   CardDetailsComponent,
   CardDetailsPanelComponent,
   CardDescriptionsPanelComponent,
+  CardActivityComponent,
 ];
 
 export {
@@ -20,5 +22,6 @@ export {
   BoardColumnComponent,
   CardDetailsComponent,
   CardDetailsPanelComponent,
-  CardDescriptionsPanelComponent
+  CardDescriptionsPanelComponent,
+  CardActivityComponent,
 };

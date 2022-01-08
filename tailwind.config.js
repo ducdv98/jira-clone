@@ -117,6 +117,7 @@ module.exports = {
         backgroundLightSuccess: '#E4FCEF',
         backgroundDark: '#091e4214',
         backgroundGray: '#f5f6f8',
+        backgroundDarkest: '#505f79',
 
         borderLightest: '#dfe1e6',
         borderLight: '#C1C7D0',

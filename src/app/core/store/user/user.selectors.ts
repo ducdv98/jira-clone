@@ -34,3 +34,9 @@ export const selectUserById = (id: string | undefined) => createSelector(
     return null;
   }
 );
+
+// This just return the first user in the users list :)
+export const selectCurrentUser = createSelector(
+  allUsers,
+  users => users[0]
+);

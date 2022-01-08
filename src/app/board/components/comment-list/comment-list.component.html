@@ -1,0 +1,9 @@
+<div class="comments-container">
+  <app-comment-list-item *ngFor="let comment of comments"
+                         [comment]="comment">
+  </app-comment-list-item>
+</div>
+
+<app-add-comment-form [user]="currentUser"
+                      (addComment)="onAddComment($event)">
+</app-add-comment-form>

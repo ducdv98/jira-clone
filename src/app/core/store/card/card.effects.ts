@@ -1,14 +1,16 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
-import { catchError, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { select, Store } from '@ngrx/store';
+import { nanoid } from 'nanoid';
 
 import * as actions from './card.actions';
 
 import { BoardService } from '../../services/board.service';
 import { CardState } from './card.reducers';
-import { selectLatestOrdinalId } from './card.selectors';
+import { selectLatestOrdinalId, selectSelectedCardId } from './card.selectors';
+import { Comment } from '@app/core/interfaces';
 
 @Injectable()
 export class CardEffects {
@@ -33,14 +35,44 @@ export class CardEffects {
     )
   );
 
-  getTags$ = createEffect(() => this.actions$.pipe(
+  getLabels$ = createEffect(() => this.actions$.pipe(
     ofType(actions.getLabels),
-    mergeMap(() => this.boardService.getTags()
+    mergeMap(() => this.boardService.getLabels()
       .pipe(
-        map(tags => actions.getLabelsSuccess({ labels: tags }),
-          catchError((error) => of(actions.getLabelsError({ error })))
-        )
+        map(labels => actions.getLabelsSuccess({ labels })),
+        catchError((error) => of(actions.getLabelsError({ error })))
       )
+    ))
+  );
+
+  getComments$ = createEffect(() => this.actions$.pipe(
+    ofType(actions.getComments),
+    mergeMap(_ => this.boardService.getComments()
+      .pipe(
+        map(comments => actions.getCommentsSuccess({ comments })),
+        catchError((error) => of(actions.getCommentsError({ error })))
+      )
+    ))
+  );
+
+  addComment$ = createEffect(() => this.actions$.pipe(
+    ofType(actions.addComment),
+    withLatestFrom(this.store.pipe(select(selectSelectedCardId))),
+    filter(([_, cardId]) => !!cardId),
+    mergeMap(([{ comment }, cardId]) => {
+        const newComment: Comment = {
+          ...comment,
+          id: nanoid(),
+          cardId: cardId || '',
+          createdAt: new Date().toISOString(),
+        };
+
+        return this.boardService.addComment(newComment)
+          .pipe(
+            map(_ => actions.addCommentSuccess({ comment: newComment })),
+            catchError((error) => of(actions.addCommentError({ error })))
+          );
+      }
     ))
   );
 

@@ -1,0 +1,37 @@
+<div class="flex flex-row justify-start gap-4 w-full py-4">
+  <div class="py-1">
+    <app-avatar
+      src="https://res.cloudinary.com/dvujyxh7e/image/upload/c_scale,w_48/v1592405732/captain_e8s9nk.jpg">
+    </app-avatar>
+  </div>
+  <div class="w-full">
+    <div>
+      <div *ngIf="!editMode" (click)="editMode = true"
+           class="border border-borderLightest hover:border-borderLight py-2 px-6 rounded text-textMedium cursor-text">
+        Add a comment...
+      </div>
+      <div class="text-xs mt-2" *ngIf="!editMode">
+        <span class="font-bold text-textGray">
+          Pro tip:</span> press <span class="font-bold text-textGray">M</span> to comment
+      </div>
+    </div>
+
+    <form *ngIf="editMode" [formGroup]="commentForm" (ngSubmit)="onAddComment()">
+      <app-rich-text-editor formControlName="comment"
+                            (blur)="editMode = false">
+      </app-rich-text-editor>
+      <div class="flex gap-2 mt-4">
+        <button type="submit"
+                class="bg-primary text-white font-medium rounded p-1.5 hover:opacity-90">
+          Save
+        </button>
+        <button type="button"
+                (click)="editMode = false"
+                class="bg-transparent text-textDark font-medium rounded p-1.5 hover:bg-backgroundGray">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

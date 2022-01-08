@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Card, Column, PartialCard } from '@app/core/interfaces';
+import { AddCommentModel, Card, Column, Comment, PartialCard } from '@app/core/interfaces';
 
 const ACTION_PREFIX = '[Cards]';
 
@@ -63,5 +63,34 @@ export const getLabelsSuccess = createAction(
 
 export const getLabelsError = createAction(
   `${ACTION_PREFIX} Get labels error`,
+  props<{ error: string }>()
+);
+
+export const getComments = createAction(
+  `${ACTION_PREFIX} Get comments`,
+);
+
+export const getCommentsSuccess = createAction(
+  `${ACTION_PREFIX} Get comments success`,
+  props<{ comments: Array<Comment> }>()
+);
+
+export const getCommentsError = createAction(
+  `${ACTION_PREFIX} Get comments error`,
+  props<{ error: string }>()
+);
+
+export const addComment = createAction(
+  `${ACTION_PREFIX} Add comments`,
+  props<{ comment: AddCommentModel }>()
+);
+
+export const addCommentSuccess = createAction(
+  `${ACTION_PREFIX} Add comment success`,
+  props<{ comment: Comment }>()
+);
+
+export const addCommentError = createAction(
+  `${ACTION_PREFIX} Add comment error`,
   props<{ error: string }>()
 );

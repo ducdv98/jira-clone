@@ -1,13 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import * as fromStore from '@app/core/store';
-import { Card, Column, PartialCard } from '@app/core/interfaces';
+import { Card, Column } from '@app/core/interfaces';
 import { Destroyable } from '@app/shared/utils';
 import { environment } from '@app/env';
-import { Router } from '@angular/router';
 
 @Destroyable()
 @Component({
