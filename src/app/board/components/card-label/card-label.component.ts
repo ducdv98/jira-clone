@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { tap } from 'rxjs/operators';
+import { NzSelectComponent } from 'ng-zorro-antd/select';
 
 import { Destroyable, takeUntilDestroyed } from '@app/shared/utils';
 
@@ -12,11 +13,14 @@ import { Destroyable, takeUntilDestroyed } from '@app/shared/utils';
   styleUrls: ['./card-label.component.scss']
 })
 export class CardLabelComponent implements OnInit, OnChanges {
+  @ViewChild('labelSelect', { static: false }) labelSelect!: NzSelectComponent;
   @Input() cardId: string = '';
   @Input() labels: Array<string> = [];
   @Input() availableLabels: Array<string> | null = [];
 
   @Output() updateLabels = new EventEmitter();
+
+  editMode = false;
 
   labelsControl: FormControl;
 
@@ -36,6 +40,13 @@ export class CardLabelComponent implements OnInit, OnChanges {
     if (labels && labels.currentValue !== labels.previousValue && this.labels) {
       this.labelsControl.patchValue(this.labels, { emitEvent: false });
     }
+  }
+
+  onEnableEditMode(): void {
+    this.editMode = true;
+    setTimeout(() => {
+      this.labelSelect.focus();
+    });
   }
 
 }

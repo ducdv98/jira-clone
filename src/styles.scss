@@ -82,3 +82,9 @@
     vertical-align: 0 !important;
   }
 }
+
+.ant-picker {
+  &.start-date-picker, &.due-date-picker {
+    @apply w-full border-2 rounded hover:border-transparent hover:bg-backgroundDark focus:border-borderInputFocus border-transparent shadow-none;
+  }
+}

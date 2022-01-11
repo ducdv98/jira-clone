@@ -13,6 +13,8 @@ import { CardActivityLabelsComponent } from './card-activity-labels/card-activit
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { CommentListItemComponent } from './comment-list-item/comment-list-item.component';
 import { AddCommentFormComponent } from './add-comment-form/add-comment-form.component';
+import { CardStartDateComponent } from './card-start-date/card-start-date.component';
+import { CardDueDateComponent } from './card-due-date/card-due-date.component';
 
 export const components = [
   BoardHeadingComponent,
@@ -30,6 +32,8 @@ export const components = [
   CommentListComponent,
   CommentListItemComponent,
   AddCommentFormComponent,
+  CardStartDateComponent,
+  CardDueDateComponent,
 ];
 
 export {
@@ -48,4 +52,6 @@ export {
   CommentListComponent,
   CommentListItemComponent,
   AddCommentFormComponent,
+  CardStartDateComponent,
+  CardDueDateComponent,
 };

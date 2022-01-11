@@ -20,6 +20,8 @@ import { AvatarModule } from '@app/shared/components/avatar/avatar.module';
 import { AutofocusModule, TextareaSubmitOnEnterModule, ClickOutsideModule } from '@app/shared/directives';
 import { InlineInputControlsModule } from '@app/shared/components/inline-input-controls/inline-input-controls.module';
 import { RichTextEditorModule } from '@app/shared/components/rich-text-editor/rich-text-editor.module';
+import { UnderConstructionModule } from '@app/shared/components/under-construction/under-construction.module';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 
 const routes: Routes = [
   {
@@ -55,6 +57,8 @@ const routes: Routes = [
     ClickOutsideModule,
     InlineInputControlsModule,
     RichTextEditorModule,
+    UnderConstructionModule,
+    NzDatePickerModule,
   ]
 })
 export class BoardModule {

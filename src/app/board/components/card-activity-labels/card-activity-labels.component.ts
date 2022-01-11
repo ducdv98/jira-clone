@@ -37,6 +37,7 @@ export class CardActivityLabelsComponent implements OnInit, ControlValueAccessor
   }
 
   onChangeMode(mode: ActivityViewMode): void {
+    this.mode = mode;
     this.onChanged(mode);
   }
 

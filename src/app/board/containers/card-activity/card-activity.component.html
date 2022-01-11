@@ -10,9 +10,12 @@
     <app-svg-icon name="descending"></app-svg-icon>
   </button>
 </div>
-<div class="activity-container">
-  <app-comment-list [comments]="comments$ | async"
+<div class="activity-container" [ngSwitch]="true">
+  <app-comment-list *ngSwitchCase="currentActivityTab === 'comments'"
+                    [comments]="comments$ | async"
                     [currentUser]="currentUser$ | async"
                     (addComment)="onAddComment($event)">
   </app-comment-list>
+
+  <app-under-construction *ngSwitchDefault></app-under-construction>
 </div>

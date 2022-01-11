@@ -1,0 +1,14 @@
+<ng-container *ngIf="startDate || editMode">
+  <nz-date-picker #picker
+                  [nzAllowClear]="false"
+                  class="start-date-picker"
+                  nzFormat="MM-dd-YYYY"
+                  [formControl]="startDateControl">
+  </nz-date-picker>
+</ng-container>
+
+<button *ngIf="(!startDate) && !editMode"
+        class="px-3 hover:bg-backgroundDark py-1 rounded w-full text-left text-textMedium"
+        (click)="onEnableEditMode()">
+  None
+</button>

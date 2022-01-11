@@ -1,0 +1,14 @@
+<ng-container *ngIf="dueDate || editMode">
+  <nz-date-picker #picker
+                  [nzAllowClear]="false"
+                  class="due-date-picker"
+                  nzFormat="MM-dd-YYYY"
+                  [formControl]="dueDateControl">
+  </nz-date-picker>
+</ng-container>
+
+<button *ngIf="(!dueDate) && !editMode"
+        class="px-3 hover:bg-backgroundDark py-1 rounded w-full text-left text-textMedium"
+        (click)="onEnableEditMode()">
+  None
+</button>

@@ -68,6 +68,24 @@
         </app-card-label>
       </div>
 
+      <div class="detail-item items-start">
+        <div class="title">Start date</div>
+        <app-card-start-date class="w-full"
+                             [startDate]="card.startDate"
+                             [cardId]="card.id"
+                             (updateStartDate)="onUpdateCard($event)">
+        </app-card-start-date>
+      </div>
+
+      <div class="detail-item items-start">
+        <div class="title">Due date</div>
+        <app-card-due-date class="w-full"
+                           [dueDate]="card.dueDate"
+                           [cardId]="card.id"
+                           (updateDueDate)="onUpdateCard($event)">
+        </app-card-due-date>
+      </div>
+
       <div class="detail-item">
         <div class="title">Reporter</div>
         <app-card-reporter class="w-full"

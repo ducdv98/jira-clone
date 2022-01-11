@@ -5,9 +5,13 @@
       <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
     </button>
   </div>
-  <div class="flex gap-1 flex-wrap">
-    <div class="label" *ngFor="let label of card.labels">{{label}}</div>
-  </div>
+
+  <ng-container *ngIf="card.labels.length > 0">
+    <div class="flex gap-1 flex-wrap mt-2">
+      <div class="label" *ngFor="let label of card.labels">{{label}}</div>
+    </div>
+  </ng-container>
+
   <div class="flex flex-row justify-between items-center w-full mt-4">
     <div class="flex flex-row font-medium items-start">
       <ng-container [ngSwitch]="card.type">

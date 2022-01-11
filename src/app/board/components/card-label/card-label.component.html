@@ -1,14 +1,24 @@
-<nz-select nzMode="tags" nzBorderless class="w-full label-control"
-           nzAllowClear
-           [formControl]="labelsControl"
-           [nzCustomTemplate]="defaultTemplate"
-           [nzDropdownMatchSelectWidth]="false">
-  <nz-option *ngFor="let label of availableLabels"
-             [nzLabel]="label"
-             [nzValue]="label">
-  </nz-option>
-</nz-select>
+<ng-container *ngIf="(labels && labels.length > 0) || editMode">
+  <nz-select nzMode="tags" nzBorderless class="w-full label-control"
+             nzAllowClear
+             #labelSelect
+             [formControl]="labelsControl"
+             [nzCustomTemplate]="defaultTemplate"
+             [nzDropdownMatchSelectWidth]="false">
+    <nz-option *ngFor="let label of availableLabels"
+               [nzLabel]="label"
+               [nzValue]="label">
+    </nz-option>
+  </nz-select>
 
-<ng-template #defaultTemplate let-selected>
-  <div class="h-full text-primary items-baseline mr-1 text-sm">{{selected.nzLabel}}</div>
-</ng-template>
+  <ng-template #defaultTemplate let-selected>
+    <div class="h-full text-primary items-baseline mr-1 text-sm">{{selected.nzLabel}}</div>
+  </ng-template>
+
+</ng-container>
+
+<button *ngIf="(!labels || labels.length === 0) && !editMode"
+        class="px-3 hover:bg-backgroundDark py-1 rounded w-full text-left text-textMedium"
+        (click)="onEnableEditMode()">
+  None
+</button>

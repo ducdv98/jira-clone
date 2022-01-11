@@ -35,6 +35,16 @@ export class CardEffects {
     )
   );
 
+  updateCard$ = createEffect(() => this.actions$.pipe(
+      ofType(actions.updateCard),
+      mergeMap(({ partial }) => this.boardService.updateCard(partial)
+        .pipe(
+          map(_ => actions.updateCardSuccess({ partial })),
+          catchError((error) => of(actions.updateCardError({ error })))
+        ))
+    )
+  );
+
   getLabels$ = createEffect(() => this.actions$.pipe(
     ofType(actions.getLabels),
     mergeMap(() => this.boardService.getLabels()

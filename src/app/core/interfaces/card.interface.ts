@@ -12,6 +12,8 @@ export interface Card {
   labels: Array<string>;
   description: string;
   environment: string;
+  startDate: string;
+  dueDate: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -28,4 +30,6 @@ export interface PartialCard {
   assigneeId?: string;
   reporterId?: string;
   labels?: Array<string>;
+  startDate?: string;
+  dueDate?: string;
 }
