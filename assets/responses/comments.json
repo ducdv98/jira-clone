@@ -1,0 +1,23 @@
+[
+  {
+    "id": "85149900-708c-11ec-90d6-0242ac120003",
+    "uid": "Hl3iOr",
+    "cardId": "LZf678FzPPR4NNr766xn",
+    "content": "A test comment",
+    "createdAt": "2021-12-01T11:00:00.000Z"
+  },
+  {
+    "id": "c880c07e-708c-11ec-90d6-0242ac120003",
+    "uid": "wUfAl6",
+    "cardId": "LZf678FzPPR4NNr766xn",
+    "content": "A other test comment",
+    "createdAt": "2021-12-01T11:30:00.000Z"
+  },
+  {
+    "id": "e164b8fc-708c-11ec-90d6-0242ac120003",
+    "uid": "wUfAl6",
+    "cardId": "V1StGXR8_Z5jdHi6B-myT",
+    "content": "Something goes here.",
+    "createdAt": "2021-12-01T11:34:00.000Z"
+  }
+]

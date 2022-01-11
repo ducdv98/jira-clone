@@ -6,10 +6,15 @@
     "type": "TASK",
     "columnId": "f35ae884-5f3d-11ec-bf63-0242ac130002",
     "priority": "Medium",
-    "labels": ["In review"],
+    "labels": [
+      "In review"
+    ],
     "assigneeId": "BbTGHY",
     "reporterId": "BbTGHY",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas molestie porta. Donec at efficitur urna. Phasellus consectetur, metus ac ornare tristique, nisi turpis tristique justo, nec varius felis augue at sem. In iaculis pretium ipsum nec mollis.",
+    "environment": "",
+    "startDate": "2021-11-04T17:00:00.000Z",
+    "dueDate": null,
     "createdAt": "2021-11-04T17:00:00.000Z",
     "updatedAt": "2021-11-04T17:45:00.000Z"
   },
@@ -21,9 +26,14 @@
     "columnId": "f35ae884-5f3d-11ec-bf63-0242ac130002",
     "priority": "Highest",
     "assigneeId": "BbTGHY",
-    "labels": ["Ready to release"],
+    "labels": [
+      "Ready to release"
+    ],
     "reporterId": "BbTGHY",
     "description": "Cras ut orci nec risus ullamcorper vehicula. Mauris porttitor lacinia nisl, in fermentum massa lobortis et. Vestibulum scelerisque condimentum velit, vel bibendum libero pellentesque sit amet.",
+    "environment": "",
+    "startDate": "2021-11-05T11:00:00.000Z",
+    "dueDate": null,
     "createdAt": "2021-11-05T11:00:00.000Z",
     "updatedAt": "2021-11-05T13:22:00.000Z"
   },
@@ -35,9 +45,14 @@
     "columnId": "00a34018-5f3e-11ec-bf63-0242ac130002",
     "priority": "Lowest",
     "assigneeId": "wUfAl6",
-    "labels": ["Urgent"],
+    "labels": [
+      "Urgent"
+    ],
     "reporterId": "wUfAl6",
     "description": "Donec ultrices tristique quam eget commodo. Donec ut malesuada odio. Integer semper neque sit amet dolor sagittis malesuada. Sed elementum libero eros, sed elementum ligula gravida at.",
+    "environment": "",
+    "startDate": "2021-11-06T05:00:00.000Z",
+    "dueDate": null,
     "createdAt": "2021-11-06T05:00:00.000Z",
     "updatedAt": "2021-11-06T06:53:00.000Z"
   },
@@ -52,6 +67,9 @@
     "labels": [],
     "reporterId": "Hl3iOr",
     "description": "Donec fermentum lorem vel dui porta tincidunt. Sed porta nisl sed ex sagittis suscipit. Vestibulum rutrum bibendum aliquet. Morbi ultrices molestie leo aliquet congue.",
+    "environment": "",
+    "startDate": "2021-11-22T05:12:00.000Z",
+    "dueDate": null,
     "createdAt": "2021-11-22T05:12:00.000Z",
     "updatedAt": "2021-11-22T11:33:00.000Z"
   },
@@ -66,6 +84,9 @@
     "labels": [],
     "reporterId": "wUfAl6",
     "description": "Donec fermentum lorem vel dui porta tincidunt. Sed porta nisl sed ex sagittis suscipit. Vestibulum rutrum bibendum aliquet. Morbi ultrices molestie leo aliquet congue.",
+    "environment": "",
+    "startDate": "2021-11-23T02:14:00.000Z",
+    "dueDate": "2021-11-30T07:16:00.000Z",
     "createdAt": "2021-11-23T02:14:00.000Z",
     "updatedAt": "2021-11-23T07:16:00.000Z"
   },
@@ -80,6 +101,9 @@
     "labels": [],
     "reporterId": "47zKI3",
     "description": "Quisque quis lorem vitae ante mollis semper. Vivamus facilisis dui sit amet ornare gravida. Nulla mattis sapien nec elit varius, vitae vestibulum neque sagittis.",
+    "environment": "",
+    "startDate": null,
+    "dueDate": null,
     "createdAt": "2021-11-26T04:00:00.000Z",
     "updatedAt": "2021-11-26T15:09:00.000Z"
   },
@@ -94,6 +118,9 @@
     "labels": [],
     "reporterId": "47zKI3",
     "description": "Quisque quis lorem vitae ante mollis semper. Vivamus facilisis dui sit amet ornare gravida. Nulla mattis sapien nec elit varius, vitae vestibulum neque sagittis.",
+    "environment": "",
+    "startDate": null,
+    "dueDate": null,
     "createdAt": "2021-12-01T11:00:00.000Z",
     "updatedAt": "2021-12-01T12:22:00.000Z"
   }
