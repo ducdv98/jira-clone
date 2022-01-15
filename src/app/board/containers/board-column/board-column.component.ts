@@ -20,6 +20,8 @@ export class BoardColumnComponent implements OnInit, OnChanges {
   cards$!: Observable<Array<Card>>;
   loadingCardIds$!: Observable<Array<string>>;
 
+  contextMenuVisible: boolean = false;
+
   constructor(private router: Router,
               private store: Store<fromStore.AppState>) {
   }
@@ -62,6 +64,10 @@ export class BoardColumnComponent implements OnInit, OnChanges {
       ['/board'],
       { queryParams: { selectedIssue: id } }
     );
+  }
+
+  onContextMenuClick(): void {
+    this.contextMenuVisible = false;
   }
 
 }

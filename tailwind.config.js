@@ -118,6 +118,7 @@ module.exports = {
         backgroundDark: '#091e4214',
         backgroundGray: '#f5f6f8',
         backgroundDarkest: '#505f79',
+        backgroundBlack: '#253858',
 
         borderLightest: '#dfe1e6',
         borderLight: '#C1C7D0',

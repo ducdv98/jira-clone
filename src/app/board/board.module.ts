@@ -22,6 +22,8 @@ import { InlineInputControlsModule } from '@app/shared/components/inline-input-c
 import { RichTextEditorModule } from '@app/shared/components/rich-text-editor/rich-text-editor.module';
 import { UnderConstructionModule } from '@app/shared/components/under-construction/under-construction.module';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 const routes: Routes = [
   {
@@ -59,6 +61,8 @@ const routes: Routes = [
     RichTextEditorModule,
     UnderConstructionModule,
     NzDatePickerModule,
+    NzPopoverModule,
+    NzToolTipModule,
   ]
 })
 export class BoardModule {

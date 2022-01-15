@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardHeadingComponent implements OnInit {
 
+  contextMenuVisible: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onContextMenuClick(): void {
+    this.contextMenuVisible = false;
   }
 
 }

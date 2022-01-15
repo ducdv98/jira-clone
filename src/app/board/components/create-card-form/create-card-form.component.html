@@ -18,16 +18,15 @@
       <nz-select [nzCustomTemplate]="defaultTemplate" [nzDropdownMatchSelectWidth]="false"
                  [nzDropdownRender]="renderTemplate"
                  nzBorderless
-                 [nzOptionHeightPx]="40"
                  [nzSuffixIcon]="customDropdownIcon"
                  formControlName="type"
                  class="w-12">
         <nz-option nzCustomContent [nzLabel]="t.icon" [nzValue]="t.label"
                    [nzHide]="type?.value === t.label"
                    *ngFor="let t of cardTypes">
-          <div class="flex flex-row pt-1.5">
-            <app-svg-icon [name]="t.icon" [height]="24" [width]="24"></app-svg-icon>
-            <div class="leading-none capitalize">{{t.label}}</div>
+          <div class="flex flex-row gap-2 mt-1">
+            <app-svg-icon [name]="t.icon" [height]="16" [width]="16"></app-svg-icon>
+            <div class="leading-none capitalize">{{t.label.toLowerCase()}}</div>
           </div>
         </nz-option>
       </nz-select>
@@ -39,11 +38,11 @@
       </ng-template>
 
       <ng-template #defaultTemplate let-selected>
-        <app-svg-icon [name]="selected.nzLabel" [height]="24" [width]="24"></app-svg-icon>
+        <app-svg-icon [name]="selected.nzLabel" [height]="16" [width]="16"></app-svg-icon>
       </ng-template>
 
       <ng-template #customDropdownIcon>
-        <app-svg-icon class="text-textDark" name="arrowDown" [width]="24" [height]="24"></app-svg-icon>
+        <app-svg-icon class="text-textDark" name="arrowDown" [width]="16" [height]="16"></app-svg-icon>
       </ng-template>
     </div>
   </form>

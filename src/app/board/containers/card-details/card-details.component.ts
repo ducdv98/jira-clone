@@ -21,6 +21,8 @@ export class CardDetailsComponent implements OnInit {
 
   environment = environment;
 
+  contextMenuVisible: boolean = false;
+
   constructor(private store: Store<fromStore.AppState>,
               private router: Router) {
   }
@@ -32,5 +34,9 @@ export class CardDetailsComponent implements OnInit {
 
   onCloseModal(): void {
     this.router.navigate(['/board']);
+  }
+
+  onContextMenuClick(): void {
+    this.contextMenuVisible = false;
   }
 }

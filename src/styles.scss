@@ -28,6 +28,10 @@
   @apply h-8 text-textDark rounded hover:bg-backgroundDark;
 }
 
+.circle-icon-button {
+  @apply hover:text-primary hover:bg-blue-150 w-8 h-8 rounded-full p-1;
+}
+
 .raise-button {
   @apply flex h-8 bg-backgroundGray px-1.5 py-1 rounded-sm text-textDark gap-1 hover:bg-backgroundDark;
 
@@ -42,7 +46,7 @@
 
 .issue-type-dropdown, .card-column-dropdown {
   .ant-select-arrow, .ant-select-clear {
-    top: 30%;
+    top: 40%;
     right: 20px;
   }
 }
@@ -86,5 +90,15 @@
 .ant-picker {
   &.start-date-picker, &.due-date-picker {
     @apply w-full border-2 rounded hover:border-transparent hover:bg-backgroundDark focus:border-borderInputFocus border-transparent shadow-none;
+  }
+}
+
+.card-context-menu, .column-context-menu, .board-context-menu, .card-details-context-menu {
+  .ant-popover-inner-content {
+    @apply px-0 py-1;
+  }
+
+  .ant-popover-arrow-content {
+    @apply invisible;
   }
 }

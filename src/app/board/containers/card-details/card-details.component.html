@@ -25,7 +25,13 @@
         <app-svg-icon name="share" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
       </button>
 
-      <button class="square-button">
+      <button class="square-button"
+              nz-popover nzPopoverTrigger="click"
+              [ngClass]="{'focused': contextMenuVisible}"
+              nzPopoverOverlayClassName="card-details-context-menu"
+              nzPopoverPlacement="bottomRight"
+              [(nzPopoverVisible)]="contextMenuVisible"
+              [nzPopoverContent]="contextMenuTemplate">
         <app-svg-icon name="threedot" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
       </button>
 
@@ -44,4 +50,54 @@
     </div>
   </div>
 </div>
+
+<ng-template #contextMenuTemplate>
+  <div class="flex flex-col justify-start items-start w-42">
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Log work
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Add flag
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Connect to Slack channel
+    </button>
+    <nz-divider class="my-1"></nz-divider>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Add parent
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Move
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Clone
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Delete
+    </button>
+    <nz-divider class="my-1"></nz-divider>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Actions menu
+    </button>
+    <nz-divider class="my-1"></nz-divider>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Print
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Export XML
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Export Word
+    </button>
+    <nz-divider class="my-1"></nz-divider>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Open issues in sidebar
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Configure
+    </button>
+
+  </div>
+</ng-template>
+
 

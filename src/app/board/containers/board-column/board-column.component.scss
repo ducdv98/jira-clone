@@ -7,6 +7,14 @@
 
     .square-button {
       @apply invisible;
+
+      &.focused {
+        @apply bg-backgroundBlack visible;
+
+        app-svg-icon {
+          @apply text-white;
+        }
+      }
     }
 
     &:hover .square-button {
@@ -25,5 +33,10 @@
 
   .board-column-footer {
     @apply p-1.5;
+  }
+
+  .custom-placeholder {
+    @apply bg-backgroundGray h-32 rounded border-dotted border-2 border-borderLight;
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
 }

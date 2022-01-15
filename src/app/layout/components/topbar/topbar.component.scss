@@ -1,5 +1,5 @@
 .topbar-container {
-  @apply h-topbar shadow-md flex flex-row px-4;
+  @apply h-topbar shadow-md flex flex-row px-4 justify-between;
 
   .brand {
     @apply flex flex-row items-center gap-1.5 mr-4;
@@ -9,7 +9,7 @@
     @apply flex flex-row items-center;
 
     .menu-item {
-      @apply flex flex-row items-center h-full border-b-2 mx-1 border-transparent;
+      @apply flex flex-row items-center h-full border-b-2 border-transparent;
 
       &.active {
         @apply border-primary;
@@ -29,7 +29,7 @@
 
       // Small trick to make items stick together :)
       app-svg-icon {
-        margin-left: -6px;
+        margin-left: -4px;
       }
     }
   }

@@ -9,6 +9,7 @@ export class AvatarComponent implements OnInit {
   @Input() src: string = '';
   @Input() tooltip: string = '';
   @Input() size: number = 32;
+  @Input() bordered: boolean = false;
 
   constructor() {
   }

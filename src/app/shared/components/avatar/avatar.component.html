@@ -1,1 +1,6 @@
-<img class="avatar" [width]="size" [height]="size" [src]="src" alt="avatar" nz-tooltip [nzTooltipTitle]="tooltip">
+<img class="avatar"
+     [ngClass]="{'bordered': bordered}"
+     [width]="size"
+     [height]="size"
+     [src]="src" alt="avatar"
+     nz-tooltip [nzTooltipTitle]="tooltip">

@@ -1,24 +1,44 @@
 <div class="board-heading">
-    <nz-breadcrumb>
-        <nz-breadcrumb-item>Projects</nz-breadcrumb-item>
-        <nz-breadcrumb-item>
-            <a>Jira Clone</a>
-        </nz-breadcrumb-item>
-    </nz-breadcrumb>
+  <nz-breadcrumb>
+    <nz-breadcrumb-item>Projects</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a class="text-textGray">Jira Clone</a>
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
 
-    <div class="board-title">
-        <h1 class="text-2xl font-medium">TEST board</h1>
+  <div class="board-title">
 
-        <div class="flex flex-row items-baseline">
-            <button class="square-button">
-                <app-svg-icon name="thunder" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
-            </button>
-            <button class="square-button mx-px">
-                <app-svg-icon name="star" [width]="32" [height]="24"></app-svg-icon>
-            </button>
-            <button class="square-button">
-                <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
-            </button>
-        </div>
+    <textarea class="textarea-inline" [defaultValue]="'Agile board'"
+              rows="1" appTextareaSubmitOnEnter>
+    </textarea>
+
+    <div class="flex flex-row items-baseline">
+      <button class="square-button">
+        <app-svg-icon name="thunder" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
+      </button>
+      <button class="square-button mx-px">
+        <app-svg-icon name="star" [width]="32" [height]="24"></app-svg-icon>
+      </button>
+      <button class="square-button"
+              nz-popover nzPopoverTrigger="click"
+              [ngClass]="{'focused': contextMenuVisible}"
+              nzPopoverOverlayClassName="board-context-menu"
+              nzPopoverPlacement="bottomRight"
+              [(nzPopoverVisible)]="contextMenuVisible"
+              [nzPopoverContent]="contextMenuTemplate">
+        <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
+      </button>
     </div>
+  </div>
 </div>
+
+<ng-template #contextMenuTemplate>
+  <div class="flex flex-col justify-start items-start w-36">
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Manage workflow
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      Configure board
+    </button>
+  </div>
+</ng-template>

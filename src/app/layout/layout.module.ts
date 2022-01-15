@@ -11,6 +11,8 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 import { components } from './components';
 import { SvgIconModule } from '@app/shared/components/svg-icon/svg-icon.module';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { AvatarModule } from '@app/shared/components/avatar/avatar.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SvgIconModule } from '@app/shared/components/svg-icon/svg-icon.module';
     NzAvatarModule,
     NzListModule,
     NzTypographyModule,
-    SvgIconModule
+    SvgIconModule,
+    NzInputModule,
+    AvatarModule
   ]
 })
 export class LayoutModule {

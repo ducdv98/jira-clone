@@ -23,6 +23,8 @@ export class BoardCardComponent implements OnInit, OnChanges {
   CardPriority = CardPriorityEnum;
   environment = environment;
 
+  contextMenuVisible: boolean = false;
+
   constructor(private store: Store<fromStore.AppState>) {
   }
 
@@ -39,6 +41,10 @@ export class BoardCardComponent implements OnInit, OnChanges {
     if (card && card.previousValue !== card.currentValue && this.card) {
       this.assignee$ = this.store.pipe(select(fromStore.selectUserById(this.card?.assigneeId)));
     }
+  }
+
+  onContextMenuClick(): void {
+    this.contextMenuVisible = false;
   }
 
 }

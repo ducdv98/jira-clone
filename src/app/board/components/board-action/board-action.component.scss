@@ -11,17 +11,21 @@
 
   .contributors {
     @apply ml-4 flex flex-row gap-2;
+
+    app-avatar:not(:first-child) {
+      margin-left: -1rem;
+    }
   }
 
   .grouping-action {
-    @apply flex flex-row items-center w-48;
+    @apply flex flex-row items-center w-48 gap-2 justify-end;
 
     .label {
-      @apply block text-xs font-thin text-gray-700 uppercase w-2/5;
+      @apply block text-xs font-thin text-gray-700 uppercase;
     }
 
     .custom-select {
-      @apply w-3/5 font-medium text-textDark bg-gray-50;
+      @apply w-3/5 font-medium text-textDark bg-backgroundLightest rounded;
     }
   }
 }

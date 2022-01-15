@@ -10,7 +10,13 @@
         {{cards.length > 1 ? cards.length + ' issues' : cards.length + ' issue'}}
       </span>
     </div>
-    <button class="square-button">
+    <button class="square-button"
+            nz-popover nzPopoverTrigger="click"
+            [ngClass]="{'focused': contextMenuVisible}"
+            nzPopoverOverlayClassName="column-context-menu"
+            nzPopoverPlacement="bottomRight"
+            [(nzPopoverVisible)]="contextMenuVisible"
+            [nzPopoverContent]="contextMenuTemplate">
       <app-svg-icon name="threedot" [width]="32" [height]="24"></app-svg-icon>
     </button>
   </div>
@@ -21,10 +27,21 @@
                     [loading]="(loadingCardIds$ | async)?.includes(card.id) || false"
                     [cdkDragData]="card.id"
                     [card]="card"
-                    (goToDetails)="createComponentModal($event)"
-    ></app-board-card>
+                    (goToDetails)="createComponentModal($event)">
+      <div class="custom-placeholder" *cdkDragPlaceholder></div>
+    </app-board-card>
+
   </div>
   <div class="board-column-footer">
     <app-create-card-form (createCard)="onCreateCard($event)"></app-create-card-form>
   </div>
 </div>
+
+<ng-template #contextMenuTemplate>
+  <div class="flex flex-col justify-start items-start w-36">
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">
+      See column limit
+    </button>
+    <button (click)="onContextMenuClick()" class="w-full text-left px-3 py-1 hover:bg-backgroundDark">Delete</button>
+  </div>
+</ng-template>

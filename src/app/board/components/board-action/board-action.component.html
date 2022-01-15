@@ -10,6 +10,7 @@
 
     <div class="contributors">
       <app-avatar *ngFor="let user of users"
+                  [bordered]="true"
                   [tooltip]="user.name"
                   [src]="user.avatar">
       </app-avatar>
@@ -18,7 +19,11 @@
 
   <div class="grouping-action">
     <label class="label">Group by</label>
-    <nz-select class="custom-select" [nzSuffixIcon]="selectSuffixIcon">
+    <nz-select class="custom-select"
+               [formControl]="groupByControl"
+               [nzDropdownMatchSelectWidth]="false"
+               nzBorderless
+               [nzSuffixIcon]="selectSuffixIcon">
       <nz-option nzCustomContent nzLabel="None" nzValue="None">
         <span>None</span>
       </nz-option>

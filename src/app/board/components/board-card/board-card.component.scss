@@ -3,6 +3,14 @@
 
   .square-button {
     @apply invisible;
+
+    &.focused {
+      @apply bg-backgroundBlack visible;
+
+      app-svg-icon {
+        @apply text-white;
+      }
+    }
   }
 
   &:hover {
@@ -17,5 +25,9 @@
 
   .label {
     @apply bg-backgroundGray text-textDark text-xs border-none px-1 py-0.5 rounded;
+  }
+
+  .context-button {
+    @apply px-2 py-1 hover:bg-backgroundDark;
   }
 }
