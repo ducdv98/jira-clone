@@ -1,8 +1,8 @@
 [
-  "In review",
-  "Need to discuss",
-  "Outdated",
-  "Ready to release",
+  "Important",
+  "Deployed",
+  "Discussion",
+  "Testing",
   "Urgent",
-  "Blocked"
+  "Later"
 ]
