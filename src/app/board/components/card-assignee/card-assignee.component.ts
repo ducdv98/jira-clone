@@ -21,6 +21,8 @@ export class CardAssigneeComponent implements OnInit {
 
   assigneeControl: FormControl;
 
+  editMode = false;
+
   constructor() {
     this.assigneeControl = new FormControl(null);
   }
@@ -46,5 +48,8 @@ export class CardAssigneeComponent implements OnInit {
     }
   }
 
+  onEnableEditMode(): void {
+    this.editMode = true;
+  }
 
 }

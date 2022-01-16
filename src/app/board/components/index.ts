@@ -15,6 +15,10 @@ import { CommentListItemComponent } from './comment-list-item/comment-list-item.
 import { AddCommentFormComponent } from './add-comment-form/add-comment-form.component';
 import { CardStartDateComponent } from './card-start-date/card-start-date.component';
 import { CardDueDateComponent } from './card-due-date/card-due-date.component';
+import { CardDetailsLoaderComponent } from './card-details-loader/card-details-loader.component';
+import { LabelFilterControlComponent } from './label-filter-control/label-filter-control.component';
+import { AssigneeFilterControlComponent } from './assignee-filter-control/assignee-filter-control.component';
+import { TypeFilterControlComponent } from './type-filter-control/type-filter-control.component';
 
 export const components = [
   BoardHeadingComponent,
@@ -34,6 +38,10 @@ export const components = [
   AddCommentFormComponent,
   CardStartDateComponent,
   CardDueDateComponent,
+  CardDetailsLoaderComponent,
+  LabelFilterControlComponent,
+  AssigneeFilterControlComponent,
+  TypeFilterControlComponent,
 ];
 
 export {
@@ -54,4 +62,8 @@ export {
   AddCommentFormComponent,
   CardStartDateComponent,
   CardDueDateComponent,
+  CardDetailsLoaderComponent,
+  LabelFilterControlComponent,
+  AssigneeFilterControlComponent,
+  TypeFilterControlComponent,
 };

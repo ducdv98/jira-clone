@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { AddCommentModel, Card, Column, Comment, PartialCard } from '@app/core/interfaces';
+import { AddCommentModel, Card, CardFilter, Column, Comment, PartialCard } from '@app/core/interfaces';
 
 const ACTION_PREFIX = '[Cards]';
 
@@ -93,4 +93,9 @@ export const addCommentSuccess = createAction(
 export const addCommentError = createAction(
   `${ACTION_PREFIX} Add comment error`,
   props<{ error: string }>()
+);
+
+export const updateCardFilters = createAction(
+  `${ACTION_PREFIX} Update card filters`,
+  props<{ filters: CardFilter }>()
 );

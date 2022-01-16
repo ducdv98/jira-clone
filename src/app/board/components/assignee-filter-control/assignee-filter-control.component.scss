@@ -1,0 +1,7 @@
+.contributors {
+  @apply flex flex-row gap-2;
+
+  app-avatar:not(:first-child) {
+    margin-left: -1rem;
+  }
+}

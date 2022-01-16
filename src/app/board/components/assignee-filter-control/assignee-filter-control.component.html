@@ -1,0 +1,8 @@
+<div class="contributors">
+  <app-avatar *ngFor="let user of users"
+              [bordered]="true"
+              [user]="user"
+              [selected]="selectedAssignees.includes(user.id)"
+              (select)="onChangeAssignee($event)">
+  </app-avatar>
+</div>

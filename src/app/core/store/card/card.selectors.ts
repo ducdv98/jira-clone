@@ -1,5 +1,6 @@
-import { cardAdapter, selectCardState } from './card.reducers';
 import { createSelector } from '@ngrx/store';
+
+import { cardAdapter, selectCardState } from './card.reducers';
 import { allUsers } from '../user/user.selectors';
 
 const {
@@ -14,6 +15,11 @@ export const allCards = createSelector(
   selectAllCards,
 );
 
+export const cardFilters = createSelector(
+  selectCardState,
+  state => state.filters
+);
+
 export const allCardEntities = createSelector(
   selectCardState,
   selectCardEntities,
@@ -21,10 +27,42 @@ export const allCardEntities = createSelector(
 
 export const selectCardsByColumnId = (columnId: string) => createSelector(
   allCards,
-  cards => {
-    return cards && cards.filter(c => c.columnId === columnId);
+  cards => cards && cards.filter(c => c.columnId === columnId),
+);
+
+export const clearFilterVisible = createSelector(
+  cardFilters,
+  filters => {
+    if (!filters) {
+      return false;
+    }
+
+    return filters.labels.length > 0 || filters.assignees.length > 0 || filters.types.length > 0;
+  },
+);
+
+export const selectCardsByColumnIdWithFilters = (columnId: string) => createSelector(
+  selectCardsByColumnId(columnId),
+  cardFilters,
+  (cards, filters) => {
+    if (!cards) {
+      return [];
+    }
+    if (!filters) {
+      return cards;
+    }
+
+    const assigneesFilter = filters.assignees;
+    const labelsFilter = filters.labels;
+    const typesFilter = filters.types;
+
+    return cards
+      .filter(card => (assigneesFilter.length > 0) ? assigneesFilter.includes(card.assigneeId) : card)
+      .filter(card => (labelsFilter.length > 0) ? card.labels.some(l => labelsFilter.includes(l)) : card)
+      .filter(card => (typesFilter.length > 0) ? typesFilter.includes(card.type) : card);
   }
 );
+
 
 export const selectLatestOrdinalId = createSelector(
   allCards,

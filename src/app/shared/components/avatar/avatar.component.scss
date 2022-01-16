@@ -4,4 +4,8 @@
   &.bordered {
     @apply border-2 border-white;
   }
+
+  &.selected {
+    @apply border-primary;
+  }
 }

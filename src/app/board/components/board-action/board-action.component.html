@@ -1,5 +1,5 @@
 <div class="action-container">
-  <div class="flex flex-row items-center">
+  <form [formGroup]="filterFormGroup" class="flex flex-row items-center gap-4">
     <div class="search-container">
       <input type="text"
              class="search-input">
@@ -8,14 +8,18 @@
       </div>
     </div>
 
-    <div class="contributors">
-      <app-avatar *ngFor="let user of users"
-                  [bordered]="true"
-                  [tooltip]="user.name"
-                  [src]="user.avatar">
-      </app-avatar>
-    </div>
-  </div>
+    <app-assignee-filter-control formControlName="assignees"></app-assignee-filter-control>
+
+    <app-label-filter-control formControlName="labels"></app-label-filter-control>
+
+    <app-type-filter-control formControlName="types"></app-type-filter-control>
+
+    <button type="button" class="px-2 py-1.5 rounded text-textDark font-medium hover:bg-backgroundGray"
+            *ngIf="clearFiltersVisible"
+            (click)="clearFilters()">
+      Clear filters
+    </button>
+  </form>
 
   <div class="grouping-action">
     <label class="label">Group by</label>
@@ -35,8 +39,9 @@
       </nz-option>
     </nz-select>
 
-    <ng-template #selectSuffixIcon>
-      <app-svg-icon name="arrowDown" class="text-gray-900 text-bold"></app-svg-icon>
-    </ng-template>
   </div>
 </div>
+
+<ng-template #selectSuffixIcon>
+  <app-svg-icon name="arrowDown" class="text-gray-900 text-bold"></app-svg-icon>
+</ng-template>

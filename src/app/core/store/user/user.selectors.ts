@@ -1,5 +1,6 @@
 import { selectUserState, userAdapter } from './user.reducers';
 import { createSelector } from '@ngrx/store';
+import { cardFilters } from '@app/core/store';
 
 const {
   selectIds: selectUserIds,

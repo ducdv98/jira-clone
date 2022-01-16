@@ -1,6 +1,7 @@
 <img class="avatar"
-     [ngClass]="{'bordered': bordered}"
+     [ngClass]="{'bordered': bordered, 'selected': selected}"
      [width]="size"
      [height]="size"
-     [src]="src" alt="avatar"
-     nz-tooltip [nzTooltipTitle]="tooltip">
+     [src]="user?.avatar" alt="avatar"
+     nz-tooltip [nzTooltipTitle]="user?.name"
+     (click)="onSelect()">

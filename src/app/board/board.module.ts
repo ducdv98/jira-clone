@@ -12,18 +12,21 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { ContentLoaderModule } from '@ngneat/content-loader';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
 
 import { BoardContainerComponent, containers } from './containers';
 import { components } from './components';
 import { SvgIconModule } from '@app/shared/components/svg-icon/svg-icon.module';
 import { AvatarModule } from '@app/shared/components/avatar/avatar.module';
-import { AutofocusModule, TextareaSubmitOnEnterModule, ClickOutsideModule } from '@app/shared/directives';
+import { AutofocusModule, TextareaSubmitOnEnterModule, DismissOnEscapeModule } from '@app/shared/directives';
 import { InlineInputControlsModule } from '@app/shared/components/inline-input-controls/inline-input-controls.module';
 import { RichTextEditorModule } from '@app/shared/components/rich-text-editor/rich-text-editor.module';
 import { UnderConstructionModule } from '@app/shared/components/under-construction/under-construction.module';
-import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
-import { NzPopoverModule } from 'ng-zorro-antd/popover';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 const routes: Routes = [
   {
@@ -51,18 +54,21 @@ const routes: Routes = [
     NzModalModule,
     NzCollapseModule,
     NzTagModule,
+    NzCheckboxModule,
+    NzBadgeModule,
+    NzDatePickerModule,
+    NzPopoverModule,
+    NzToolTipModule,
 
     AutofocusModule,
     AvatarModule,
     SvgIconModule,
     TextareaSubmitOnEnterModule,
-    ClickOutsideModule,
+    DismissOnEscapeModule,
     InlineInputControlsModule,
     RichTextEditorModule,
     UnderConstructionModule,
-    NzDatePickerModule,
-    NzPopoverModule,
-    NzToolTipModule,
+    ContentLoaderModule,
   ]
 })
 export class BoardModule {

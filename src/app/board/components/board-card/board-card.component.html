@@ -26,7 +26,7 @@
         <app-svg-icon *ngSwitchCase="CardTypes.STORY" name="story" [width]="16" [height]="16"></app-svg-icon>
       </ng-container>
       <div class="uppercase text-xs text-textDark" *ngIf="card.ordinalId">
-        {{environment.boardName}} - {{card.ordinalId}}</div>
+        {{card.type}}-{{card.ordinalId}}</div>
     </div>
 
     <div class="flex flex-row items-center gap-2">
@@ -55,7 +55,7 @@
       </ng-container>
 
       <ng-container *ngIf="assignee$ | async as assignee">
-        <app-avatar [src]="assignee.avatar" [size]="24" [tooltip]="assignee.name"></app-avatar>
+        <app-avatar [user]="assignee" [size]="24"></app-avatar>
       </ng-container>
     </div>
 

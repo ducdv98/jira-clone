@@ -1,23 +1,27 @@
-<div class="card-details-modal" *ngIf="selectedCard$ | async as card">
+<div class="card-details-modal" *ngIf="(selectedCard$ | async) as card">
   <div class="card-details-modal-header">
     <div class="flex flex-row items-center gap-2 ml-1.5">
       <div class="flex gap-1 items-center">
         <app-svg-icon name="thunk" [width]="20" [height]="20"></app-svg-icon>
-        <a class="text-textGray uppercase text-xs">Demo Epic</a>
+        <a class="text-textGray uppercase text-xs">Angular Jira Clone</a>
       </div>
       <div>/</div>
       <div class="flex gap-1 items-center">
-        <app-svg-icon name="bookmark" [width]="20" [height]="20"></app-svg-icon>
-        <a class="text-textGray uppercase text-xs">{{environment.boardName}}-{{card.ordinalId}}</a>
+        <ng-container [ngSwitch]="card.type">
+          <app-svg-icon *ngSwitchCase="CardTypes.TASK" name="blueCheck" [width]="20" [height]="20"></app-svg-icon>
+          <app-svg-icon *ngSwitchCase="CardTypes.BUG" name="bug" [width]="20" [height]="20"></app-svg-icon>
+          <app-svg-icon *ngSwitchCase="CardTypes.STORY" name="story" [width]="20" [height]="20"></app-svg-icon>
+        </ng-container>
+        <a class="text-textGray uppercase text-xs">{{card.type}}-{{card.ordinalId}}</a>
       </div>
     </div>
     <div class="actions">
-      <button class="square-button flex items-center">
+      <button class="square-button flex items-center" nz-tooltip nzTooltipTitle="Watch options">
         <app-svg-icon name="eye" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
         <span class="pr-1.5">1</span>
       </button>
 
-      <button class="square-button">
+      <button class="square-button" nz-tooltip nzTooltipTitle="Vote options">
         <app-svg-icon name="thumbup" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
       </button>
 
@@ -26,6 +30,7 @@
       </button>
 
       <button class="square-button"
+              nz-tooltip nzTooltipTitle="Actions"
               nz-popover nzPopoverTrigger="click"
               [ngClass]="{'focused': contextMenuVisible}"
               nzPopoverOverlayClassName="card-details-context-menu"
@@ -35,7 +40,8 @@
         <app-svg-icon name="threedot" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
       </button>
 
-      <button class="square-button" (click)="onCloseModal()">
+      <button class="square-button" (click)="onCloseModal()"
+              nz-tooltip nzTooltipTitle="Close">
         <app-svg-icon name="close" [width]="32" [height]="24" fill="#fff"></app-svg-icon>
       </button>
 
@@ -50,6 +56,7 @@
     </div>
   </div>
 </div>
+
 
 <ng-template #contextMenuTemplate>
   <div class="flex flex-col justify-start items-start w-42">
@@ -99,5 +106,9 @@
 
   </div>
 </ng-template>
+
+<ng-container *ngIf="!(selectedCard$ | async)">
+  <app-card-details-loader></app-card-details-loader>
+</ng-container>
 
 

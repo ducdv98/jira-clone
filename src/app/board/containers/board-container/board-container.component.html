@@ -1,6 +1,9 @@
 <div class="flex flex-col w-full h-full">
   <app-board-heading></app-board-heading>
-  <app-board-action [users]="users$ | async"></app-board-action>
+  <app-board-action
+    [clearFiltersVisible]="clearFiltersVisible$ | async"
+    (updateCardFilters)="updateCardFilters($event)">
+  </app-board-action>
 
   <app-board></app-board>
 </div>

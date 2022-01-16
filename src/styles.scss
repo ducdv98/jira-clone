@@ -44,9 +44,16 @@
   }
 }
 
-.issue-type-dropdown, .card-column-dropdown {
+.issue-type-dropdown {
   .ant-select-arrow, .ant-select-clear {
     top: 40%;
+    right: 20px;
+  }
+}
+
+.card-column-dropdown {
+  .ant-select-arrow, .ant-select-clear {
+    top: 35%;
     right: 20px;
   }
 }
@@ -91,6 +98,20 @@
   &.start-date-picker, &.due-date-picker {
     @apply w-full border-2 rounded hover:border-transparent hover:bg-backgroundDark focus:border-borderInputFocus border-transparent shadow-none;
   }
+}
+
+.label-filter-context-menu, .type-filter-context-menu {
+  .ant-popover-inner-content {
+    @apply px-0 py-2;
+  }
+
+  .ant-popover-arrow-content {
+    @apply invisible;
+  }
+}
+
+.ant-checkbox-wrapper.type-filter-option {
+  @apply items-center;
 }
 
 .card-context-menu, .column-context-menu, .board-context-menu, .card-details-context-menu {

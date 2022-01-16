@@ -1,6 +1,6 @@
 <div class="flex flex-row justify-start gap-4 w-full mt-6 mb-3">
   <div class="py-1" *ngIf="comment.user">
-    <app-avatar [src]="comment.user.avatar" [tooltip]="comment.user.name"></app-avatar>
+    <app-avatar [user]="comment.user"></app-avatar>
   </div>
   <div class="flex flex-col">
     <div class="flex flex-row gap-4 items-baseline">

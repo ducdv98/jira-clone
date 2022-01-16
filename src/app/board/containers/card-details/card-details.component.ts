@@ -8,6 +8,7 @@ import * as fromStore from '@app/core/store';
 import { Card, Column } from '@app/core/interfaces';
 import { Destroyable } from '@app/shared/utils';
 import { environment } from '@app/env';
+import { CardTypesEnum } from '@app/core/enums';
 
 @Destroyable()
 @Component({
@@ -20,6 +21,7 @@ export class CardDetailsComponent implements OnInit {
   selectedCard$!: Observable<Card | undefined | null>;
 
   environment = environment;
+  CardTypes = CardTypesEnum;
 
   contextMenuVisible: boolean = false;
 

@@ -1,0 +1,16 @@
+.trigger-button {
+  @apply flex items-center px-2 py-1.5 rounded text-textDark font-medium hover:bg-backgroundGray gap-2;
+
+  &.focused {
+    @apply text-white bg-backgroundBlack visible;
+
+    app-svg-icon {
+      @apply text-white;
+    }
+  }
+}
+
+.type-filter-option {
+  @apply w-full text-left px-3 pt-1 py-2 border-l-2 border-transparent hover:bg-backgroundDark text-textDark text-sm hover:border-primary;
+  margin-left: 0 !important;
+}

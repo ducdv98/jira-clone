@@ -27,12 +27,11 @@
   }
 
   .board-column-content {
-    @apply mx-1.5 flex flex-col gap-1;
-
+    @apply mx-1.5 flex flex-col gap-1 pb-1.5;
   }
 
   .board-column-footer {
-    @apply p-1.5;
+    @apply pt-0 p-1.5;
   }
 
   .custom-placeholder {

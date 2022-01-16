@@ -8,7 +8,7 @@
   <nz-option nzCustomContent [nzLabel]="u.avatar" [nzValue]="u"
              *ngFor="let u of users">
     <div class="flex gap-2 py-1 item-centers">
-      <app-avatar [src]="u.avatar" [tooltip]="u.name" [size]="24"></app-avatar>
+      <app-avatar [user]="u" [size]="24"></app-avatar>
       <div class="capitalize text-textDark">{{u.name}}</div>
     </div>
   </nz-option>
@@ -16,7 +16,7 @@
 
 <ng-template #defaultTemplate let-selected>
   <div class="flex items-center gap-2 h-full">
-    <app-avatar [src]="selected.nzValue.avatar" [tooltip]="selected.nzValue.name" [size]="24"></app-avatar>
+    <app-avatar [user]="selected.nzValue" [size]="24"></app-avatar>
     <div class="capitalize text-textDark">{{selected.nzValue.name}}</div>
   </div>
 </ng-template>

@@ -1,5 +1,6 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
+
 import { catchError, filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { select, Store } from '@ngrx/store';
@@ -10,7 +11,8 @@ import * as actions from './card.actions';
 import { BoardService } from '../../services/board.service';
 import { CardState } from './card.reducers';
 import { selectLatestOrdinalId, selectSelectedCardId } from './card.selectors';
-import { Comment } from '@app/core/interfaces';
+import { Card, Comment } from '@app/core/interfaces';
+import { selectCurrentUser } from '../user/user.selectors';
 
 @Injectable()
 export class CardEffects {
@@ -26,10 +28,21 @@ export class CardEffects {
 
   createCard$ = createEffect(() => this.actions$.pipe(
       ofType(actions.createCard),
-      withLatestFrom(this.store.pipe(select(selectLatestOrdinalId))),
-      mergeMap(([{ card }, ordinalId]) => this.boardService.createCard(card)
+      withLatestFrom(this.store.pipe(select(selectLatestOrdinalId)), this.store.pipe(select(selectCurrentUser))),
+      mergeMap(([{ card }, ordinalId, user]) => this.boardService.createCard(card)
         .pipe(
-          map(_ => actions.createCardSuccess({ card: { ...card, ordinalId: ordinalId + 1 } })),
+          map(_ => {
+            const createdCard: Card = {
+              ...card,
+              ordinalId: ordinalId + 1,
+              assigneeId: user.id,
+              reporterId: user.id,
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString(),
+            };
+
+            return actions.createCardSuccess({ card: createdCard });
+          }),
           catchError((error) => of(actions.createCardError({ error })))
         ))
     )

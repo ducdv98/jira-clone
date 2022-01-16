@@ -29,8 +29,8 @@
     </button>
 
     <button class="circle-icon-button text-textHeader"
-            nz-tooltip nzTooltipTitle="Notifications"
-            nzTooltipPlacement="Help">
+            nz-tooltip nzTooltipTitle="Help"
+            nzTooltipPlacement="bottom">
       <app-svg-icon name="questionMark" [width]="24" [height]="24"></app-svg-icon>
     </button>
 
@@ -40,11 +40,12 @@
       <app-svg-icon name="config" [width]="24" [height]="24"></app-svg-icon>
     </button>
 
-    <app-avatar src="/assets/avatars/cake.png"
-                [size]="48"
-                nz-tooltip nzTooltipTitle="Pancake Swap"
-                nzTooltipPlacement="bottom">
-    </app-avatar>
+
+    <ng-container *ngIf="currentUser$ | async as user">
+      <app-avatar [user]="user"
+                  [size]="48">
+      </app-avatar>
+    </ng-container>
   </div>
 
 </div>

@@ -1,0 +1,26 @@
+<button nz-popover nzPopoverTrigger="click"
+        [ngClass]="{'focused': contextMenuVisible}"
+        nzPopoverOverlayClassName="label-filter-context-menu"
+        nzPopoverPlacement="bottom"
+        [(nzPopoverVisible)]="contextMenuVisible"
+        [nzPopoverContent]="contextLabelMenuTemplate"
+        class="trigger-button">
+  Label
+  <nz-badge nzStandalone
+            [nzStyle]="{backgroundColor: '#0052CC'}"
+            [nzCount]="selectedLabels.length"
+            [nzShowZero]="false">
+  </nz-badge>
+  <app-svg-icon name="arrowDown"></app-svg-icon>
+</button>
+
+<ng-template #contextLabelMenuTemplate>
+  <div class="flex flex-col justify-start items-start w-36">
+    <label *ngFor="let label of labels"
+           [nzChecked]="selectedLabels.includes(label)"
+           nz-checkbox class="filter-option"
+           (nzCheckedChange)="onChangeFilter($event, label)">
+      {{label}}
+    </label>
+  </div>
+</ng-template>

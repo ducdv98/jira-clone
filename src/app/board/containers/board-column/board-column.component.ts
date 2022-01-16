@@ -8,6 +8,7 @@ import { nanoid } from 'nanoid';
 
 import { Card, Column, PartialCard } from '@app/core/interfaces';
 import * as fromStore from '@app/core/store';
+import { selectCardsByColumnIdWithFilters } from '@app/core/store';
 
 @Component({
   selector: 'app-board-column',
@@ -32,7 +33,7 @@ export class BoardColumnComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.column && changes.column) {
-      this.cards$ = this.store.pipe(select(fromStore.selectCardsByColumnId(this.column.id)));
+      this.cards$ = this.store.pipe(select(fromStore.selectCardsByColumnIdWithFilters(this.column.id)));
     }
   }
 

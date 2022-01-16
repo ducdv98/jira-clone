@@ -1,0 +1,29 @@
+<button nz-popover nzPopoverTrigger="click"
+        [ngClass]="{'focused': contextMenuVisible}"
+        nzPopoverOverlayClassName="type-filter-context-menu"
+        nzPopoverPlacement="bottom"
+        [(nzPopoverVisible)]="contextMenuVisible"
+        [nzPopoverContent]="contextTypeMenuTemplate"
+        class="trigger-button">
+  Type
+  <nz-badge nzStandalone
+            [nzStyle]="{backgroundColor: '#0052CC'}"
+            [nzCount]="selectedTypes.length"
+            [nzShowZero]="false">
+  </nz-badge>
+  <app-svg-icon name="arrowDown"></app-svg-icon>
+</button>
+
+<ng-template #contextTypeMenuTemplate>
+  <div class="flex flex-col justify-start items-start w-36">
+    <label *ngFor="let type of cardTypes"
+           [nzChecked]="selectedTypes.includes(type.label)"
+           nz-checkbox class="type-filter-option"
+           (nzCheckedChange)="onChangeFilter($event, type.label)">
+      <div class="flex items-end gap-2">
+        <app-svg-icon [name]="type.icon" [width]="16" [height]="16"></app-svg-icon>
+        <div>{{type.label}}</div>
+      </div>
+    </label>
+  </div>
+</ng-template>

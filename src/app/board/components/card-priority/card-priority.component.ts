@@ -17,6 +17,8 @@ export class CardPriorityComponent implements OnInit, OnChanges {
   @Input() priority: string = '';
   @Output() updatePriority = new EventEmitter();
 
+  editMode = false;
+
   CardPriorities = CardPriorities;
   priorityControl: FormControl;
 
@@ -43,6 +45,10 @@ export class CardPriorityComponent implements OnInit, OnChanges {
     if (priority && priority.previousValue !== priority.currentValue && this.priority) {
       this.priorityControl.patchValue(this.priority, { emitEvent: false });
     }
+  }
+
+  onEnableEditMode(): void {
+    this.editMode = true;
   }
 
 }

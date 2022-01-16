@@ -1,19 +1,27 @@
-<nz-select [nzCustomTemplate]="defaultTemplate" [nzDropdownMatchSelectWidth]="false"
-           nzBorderless
-           [nzSuffixIcon]="customDropdownIcon"
-           [formControl]="priorityControl"
-           [nzOptionHeightPx]="34"
-           [nzShowArrow]="false"
-           class="w-full priority-control">
-  <nz-option nzCustomContent [nzLabel]="p.icon" [nzValue]="p.name"
-             [nzHide]="p.name === priorityControl.value"
-             *ngFor="let p of CardPriorities">
-    <div class="flex gap-2 py-1">
-      <app-svg-icon [name]="p.icon" [height]="16" [width]="16"></app-svg-icon>
-      <div class="leading-none capitalize text-textDark">{{p.name}}</div>
-    </div>
-  </nz-option>
-</nz-select>
+<ng-container *ngIf="priority || editMode">
+  <nz-select [nzCustomTemplate]="defaultTemplate" [nzDropdownMatchSelectWidth]="false"
+             nzBorderless
+             [nzSuffixIcon]="customDropdownIcon"
+             [formControl]="priorityControl"
+             [nzOptionHeightPx]="34"
+             [nzShowArrow]="false"
+             class="w-full priority-control">
+    <nz-option nzCustomContent [nzLabel]="p.icon" [nzValue]="p.name"
+               [nzHide]="p.name === priorityControl.value"
+               *ngFor="let p of CardPriorities">
+      <div class="flex gap-2 py-1">
+        <app-svg-icon [name]="p.icon" [height]="16" [width]="16"></app-svg-icon>
+        <div class="leading-none capitalize text-textDark">{{p.name}}</div>
+      </div>
+    </nz-option>
+  </nz-select>
+</ng-container>
+
+<button *ngIf="(!priority) && !editMode"
+        class="px-3 hover:bg-backgroundDark py-1 rounded w-full text-left text-textMedium"
+        (click)="onEnableEditMode()">
+  None
+</button>
 
 <ng-template #defaultTemplate let-selected>
   <div class="flex items-center gap-2">

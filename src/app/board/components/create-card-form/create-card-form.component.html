@@ -4,8 +4,10 @@
     <div>Create issue</div>
   </button>
   <form *ngIf="editMode" class="create-issue-form"
+        [ngClass]="{'visible': editMode}"
         [formGroup]="createCardForm"
-        appClickOutside>
+        (onDismiss)="editMode = false"
+        dismissOnEscape>
       <textarea
         formControlName="title"
         placeholder="What need to be done?"

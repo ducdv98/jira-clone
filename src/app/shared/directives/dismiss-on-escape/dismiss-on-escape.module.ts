@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ClickOutsideDirective } from './click-outside.directive';
+import { DismissOnEscapeDirective } from './dismiss-on-escape.directive';
 
 @NgModule({
   declarations: [
-    ClickOutsideDirective
+    DismissOnEscapeDirective
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ClickOutsideDirective
+    DismissOnEscapeDirective
   ]
 })
-export class ClickOutsideModule {
+export class DismissOnEscapeModule {
 }

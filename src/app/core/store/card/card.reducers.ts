@@ -2,10 +2,11 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, createFeatureSelector, createReducer, on } from '@ngrx/store';
 import { immerOn } from 'ngrx-immer/store';
 
-import { Card, Comment } from '@app/core/interfaces';
+import { Card, CardFilter, Comment } from '@app/core/interfaces';
 import * as actions from './card.actions';
 
 export interface CardState extends EntityState<Card> {
+  filters: CardFilter;
   selectedCardId: string | null;
   loadingCardIds: Array<string>;
   labels: Array<string>;
@@ -19,6 +20,11 @@ export interface CardState extends EntityState<Card> {
 export const cardAdapter: EntityAdapter<Card> = createEntityAdapter<Card>();
 
 const initialCardState: CardState = cardAdapter.getInitialState({
+  filters: {
+    types: [],
+    labels: [],
+    assignees: []
+  },
   selectedCardId: null,
   loadingCardIds: [],
   labels: [],
@@ -110,6 +116,10 @@ const reducer = createReducer(
   immerOn(actions.addCommentError, (state, { error }) => {
     state.commentLoading = false;
     state.error = error;
+  }),
+
+  immerOn(actions.updateCardFilters, (state, { filters }) => {
+    state.filters = filters;
   }),
 );
 
