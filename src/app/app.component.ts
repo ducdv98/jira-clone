@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import * as fromStore from '@app/core/store';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-jira-clone';
+
+  loading$: Observable<boolean>;
+
+  constructor(private store: Store<fromStore.AppState>) {
+    this.loading$ = this.store.pipe(select(fromStore.selectCardsLoading))
+  }
 }

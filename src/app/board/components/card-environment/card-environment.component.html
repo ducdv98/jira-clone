@@ -1,8 +1,6 @@
 <div *ngIf="!editMode" (click)="editMode = true">
-  <div *ngIf="environment"
-       [innerHTML]="environment"
-       class="hover:bg-backgroundDark p-2 rounded">
-  </div>
+  <quill-view *ngIf="environment" [content]="environment"></quill-view>
+
   <div *ngIf="!environment"
        class="hover:bg-backgroundDark p-2 rounded">
     None

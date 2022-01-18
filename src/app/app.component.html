@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<ng-template #indicatorTemplate>
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</ng-template>
+<nz-spin nzSize="large" [nzIndicator]="indicatorTemplate" [nzSpinning]="loading$ | async">
+  <router-outlet></router-outlet>
+</nz-spin>

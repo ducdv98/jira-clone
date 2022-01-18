@@ -1,23 +1,23 @@
 [
   {
     "id": "85149900-708c-11ec-90d6-0242ac120003",
-    "uid": "Hl3iOr",
-    "cardId": "LZf678FzPPR4NNr766xn",
-    "content": "A test comment",
-    "createdAt": "2021-12-01T11:00:00.000Z"
+    "uid": "c2497c6c-7552-11ec-90d6-0242ac120003",
+    "cardId": "0208b70a-761b-11ec-90d6-0242ac120003",
+    "content": "Please focus on sidebar, header and the popup. They are broken on small screens.",
+    "createdAt": "2022-01-04T17:04:00.000Z"
   },
   {
     "id": "c880c07e-708c-11ec-90d6-0242ac120003",
-    "uid": "wUfAl6",
-    "cardId": "LZf678FzPPR4NNr766xn",
-    "content": "A other test comment",
-    "createdAt": "2021-12-01T11:30:00.000Z"
+    "uid": "c2497c6c-7552-11ec-90d6-0242ac120003",
+    "cardId": "4f69764c-761b-11ec-90d6-0242ac120003",
+    "content": "The sidebar also can be toggle by click on the boundary.",
+    "createdAt": "2022-01-05T12:20:00.000Z"
   },
   {
     "id": "e164b8fc-708c-11ec-90d6-0242ac120003",
-    "uid": "wUfAl6",
-    "cardId": "V1StGXR8_Z5jdHi6B-myT",
-    "content": "Something goes here.",
-    "createdAt": "2021-12-01T11:34:00.000Z"
+    "uid": "c2497c6c-7552-11ec-90d6-0242ac120003",
+    "cardId": "025880ac-779f-11ec-90d6-0242ac120003",
+    "content": "Please create a wrapper component that can be reusable in other places.",
+    "createdAt": "2022-01-09T08:12:00.000Z"
   }
 ]

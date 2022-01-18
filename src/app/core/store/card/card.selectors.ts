@@ -25,6 +25,28 @@ export const allCardEntities = createSelector(
   selectCardEntities,
 );
 
+export const selectLoading = createSelector(
+  selectCardState,
+  state => state.loading
+);
+
+export const selectLabelLoading = createSelector(
+  selectCardState,
+  state => state.labelLoading
+);
+
+export const selectCommentLoading = createSelector(
+  selectCardState,
+  state => state.commentLoading
+);
+
+export const selectCardsLoading = createSelector(
+  selectLoading,
+  selectLabelLoading,
+  selectCommentLoading,
+  (loading, labelLoading, commentLoading) => loading && labelLoading && commentLoading
+);
+
 export const selectCardsByColumnId = (columnId: string) => createSelector(
   allCards,
   cards => cards && cards.filter(c => c.columnId === columnId),

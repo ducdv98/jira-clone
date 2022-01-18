@@ -27,6 +27,7 @@ import { AutofocusModule, TextareaSubmitOnEnterModule, DismissOnEscapeModule } f
 import { InlineInputControlsModule } from '@app/shared/components/inline-input-controls/inline-input-controls.module';
 import { RichTextEditorModule } from '@app/shared/components/rich-text-editor/rich-text-editor.module';
 import { UnderConstructionModule } from '@app/shared/components/under-construction/under-construction.module';
+import { QuillModule } from 'ngx-quill';
 
 const routes: Routes = [
   {
@@ -69,6 +70,7 @@ const routes: Routes = [
     RichTextEditorModule,
     UnderConstructionModule,
     ContentLoaderModule,
+    QuillModule,
   ]
 })
 export class BoardModule {
