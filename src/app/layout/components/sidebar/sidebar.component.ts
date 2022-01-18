@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
+import { tap } from 'rxjs/operators';
+
+import { Destroyable, takeUntilDestroyed } from '@app/shared/utils';
+
+@Destroyable()
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -42,10 +48,18 @@ export class SidebarComponent implements OnInit {
 
   collapsed = false;
 
-  constructor() {
+  constructor(private breakpointObserver: BreakpointObserver) {
   }
 
   ngOnInit(): void {
+    this.breakpointObserver.observe([
+      '(max-width: 959.98px)'
+    ]).pipe(
+      takeUntilDestroyed(this),
+      tap(state => {
+        this.collapsed = state.matches;
+      })
+    ).subscribe();
   }
 
   onToggleSidebar(): void {

@@ -1,4 +1,7 @@
 .card-details-modal {
+  @apply flex flex-col;
+  height: 550px;
+
   .card-details-modal-header {
     @apply flex flex-row justify-between items-center;
 
@@ -8,7 +11,7 @@
   }
 
   .card-details-modal-content {
-    @apply flex flex-row;
+    @apply flex flex-row h-full gap-4 pb-2;
 
     .detail-item {
       @apply w-full flex justify-between text-xs h-6 items-center;
