@@ -42,7 +42,6 @@ export class CardDescriptionComponent implements OnInit, OnChanges {
       description: this.descriptionForm.value.description
     };
 
-    console.log(this.descriptionForm.value.description);
     this.updateDescription.emit(partial);
   }
 

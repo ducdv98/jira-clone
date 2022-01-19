@@ -1,0 +1,12 @@
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';
+
+
+.ql-container.ngx-quill-view {
+  @apply hover:bg-backgroundDark p-2 rounded font-sans text-sm p-0;
+
+  .ql-editor {
+    @apply p-0;
+  }
+}
+

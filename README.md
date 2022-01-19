@@ -1,27 +1,47 @@
-# NgJiraClone
+# A Jira Software clone built with Angular, NgRx, TailwindCSS and Ng-Zorro
+<br></br>
+I'm a frontend developer and I want to improve my coding skills and try out new things. It's very difficult to start with a new idea for a practicing project. So I decide to choose a tool and make its clone. I choose a tool that is very familiar to me. That's Jira :)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+## Demo
+<br></br>![](screenshots/img.png)
+You can see the live demo here: [Live demo](https://ducdv98.github.io/ng-jira-clone/ "https://ducdv98.github.io/ng-jira-clone/")
 
-## Development server
+## Tech stack
+<br></br>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Angular - The modern web developer's platform.](https://angular.io/)
+- [Ngrx - Reactive State for Angular.](https://ngrx.io/)
+- [TailwindCSS - Rapidly build modern websites without ever leaving your HTML.](https://tailwindcss.com/)
+- [Ng-Zorro - Ant Design of Angular.](https://ng.ant.design/)
 
-## Code scaffolding
+## Development Setup
+<br></br>
+### Prerequisites
+- Install  [Node.js](https://nodejs.org/)  which includes  [Node Package Manager](https://www.npmjs.com/get-npm).
+- Install [Angular CLI.](https://angular.io/cli)
+### Setting Up a Project
+- Clone this repository:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+      git clone https://github.com/ducdv98/ng-jira-clone
 
-## Build
+- Install dependencies:
+  
+      npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Start the development server:
 
-## Running unit tests
+      npm run start
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## What's missing?
+<br>
+Currently, this application is running with static data. In the future, I hope I can implement a backend server for it. May be using NestJS.
+<br></br>
+Of course, any contributions or collaborations are welcome.
 
-## Running end-to-end tests
+## Contributing
+<br></br>
+If you have any ideas, please  [create an issue](https://github.com/ducdv98/ng-jira-clone/issues/new) and tell me what you think.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+If you'd like to contribute, please fork the repository and make changes as you'd like.  [Pull requests](https://github.com/ducdv98/ng-jira-clone/pulls)  are warmly welcome.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Love this repo? Give my repo a star  ⭐  ⬆️.**

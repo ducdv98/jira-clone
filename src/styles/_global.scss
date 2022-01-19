@@ -1,0 +1,126 @@
+.ant-spin-nested-loading > div > .ant-spin {
+  @apply max-h-screen flex justify-center items-center;
+}
+
+.ant-modal-mask {
+  background-color: #091e428a;
+}
+
+.ant-modal-body {
+  max-height: 640px;
+  overflow: hidden;
+}
+
+/* Animate items as they're being sorted. */
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Animate an item that has been dropped. */
+.cdk-drag-animating {
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.ant-select-item {
+  @apply border-l-2 border-transparent hover:border-primary;
+}
+
+.square-button {
+  @apply h-8 text-textDark rounded hover:bg-backgroundDark;
+}
+
+.circle-icon-button {
+  @apply hover:text-primary hover:bg-blue-150 w-8 h-8 rounded-full p-1;
+}
+
+.raise-button {
+  @apply flex h-8 bg-backgroundGray px-1.5 py-1 rounded-sm text-textDark gap-1 hover:bg-backgroundDark;
+
+  &.raise-button-sm {
+    @apply h-6 px-1.5 py-0.5;
+  }
+
+  &.selected {
+    @apply bg-backgroundDarkest text-backgroundLightest;
+  }
+}
+
+.issue-type-dropdown {
+  .ant-select-arrow, .ant-select-clear {
+    top: 40%;
+    right: 20px;
+  }
+}
+
+.card-column-dropdown {
+  .ant-select-arrow, .ant-select-clear {
+    top: 35%;
+    right: 20px;
+  }
+}
+
+.issue-type-dropdown {
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    @apply p-0 py-1.5 hover:bg-backgroundDark;
+  }
+}
+
+.card-details-panel {
+  .ant-collapse-header {
+    @apply bg-white rounded;
+
+    border-radius: 0.25rem 0.25rem 0 0 !important;
+    padding: 0.5rem 0.625rem !important;
+  }
+
+  .ant-collapse-content > .ant-collapse-content-box {
+    @apply px-4 py-1;
+    border-radius: 0 0 0.25rem 0.25rem !important;
+  }
+}
+
+.priority-control.ant-select {
+  @apply hover:bg-backgroundDark rounded-sm;
+  cursor: text !important;
+}
+
+.label-control {
+  @apply hover:bg-backgroundDark;
+
+  .ant-select-selection-item {
+  }
+
+  .anticon {
+    vertical-align: 0 !important;
+  }
+}
+
+.ant-picker {
+  &.start-date-picker, &.due-date-picker {
+    @apply w-full border-2 rounded hover:border-transparent hover:bg-backgroundDark focus:border-borderInputFocus border-transparent shadow-none;
+  }
+}
+
+.label-filter-context-menu, .type-filter-context-menu {
+  .ant-popover-inner-content {
+    @apply px-0 py-2;
+  }
+
+  .ant-popover-arrow-content {
+    @apply invisible;
+  }
+}
+
+.ant-checkbox-wrapper.type-filter-option {
+  @apply items-center;
+}
+
+.card-context-menu, .column-context-menu, .board-context-menu, .card-details-context-menu {
+  .ant-popover-inner-content {
+    @apply px-0 py-1;
+  }
+
+  .ant-popover-arrow-content {
+    @apply invisible;
+  }
+}
