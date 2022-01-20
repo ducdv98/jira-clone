@@ -27,16 +27,16 @@
   {
     "id": "637b5326-7553-11ec-90d6-0242ac120003",
     "name": "Solana",
-    "avatar": "../assets/avatars/solana.png"
+    "avatar": "./assets/avatars/solana.png"
   },
   {
     "id": "80a57ce2-7553-11ec-90d6-0242ac120003",
     "name": "Tron",
-    "avatar": "../assets/avatars/tron.png"
+    "avatar": "./assets/avatars/tron.png"
   },
   {
     "id": "eed66294-7553-11ec-90d6-0242ac120003",
     "name": "Pancake Swap",
-    "avatar": "../assets/avatars/cake.png"
+    "avatar": "./assets/avatars/cake.png"
   }
 ]

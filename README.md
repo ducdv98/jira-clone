@@ -19,7 +19,7 @@ You can see the live demo here: [Live demo](https://ducdv98.github.io/jira-clone
 ### Setting Up a Project
 - Clone this repository:
 
-      git clone https://github.com/ducdv98/ng-jira-clone
+      git clone https://github.com/ducdv98/jira-clone
 
 - Install dependencies:
   
@@ -35,8 +35,8 @@ Currently, this application is running with static data. In the future, I hope I
 Of course, any contributions or collaborations are welcome.
 
 ## Contributing
-If you have any ideas, please  [create an issue](https://github.com/ducdv98/ng-jira-clone/issues/new) and tell me what you think.
+If you have any ideas, please  [create an issue](https://github.com/ducdv98/jira-clone/issues/new) and tell me what you think.
 
-If you'd like to contribute, please fork the repository and make changes as you'd like.  [Pull requests](https://github.com/ducdv98/ng-jira-clone/pulls)  are warmly welcome.
+If you'd like to contribute, please fork the repository and make changes as you'd like.  [Pull requests](https://github.com/ducdv98/jira-clone/pulls)  are warmly welcome.
 
 **Love this repo? Give my repo a star  ⭐  ⬆️.**
