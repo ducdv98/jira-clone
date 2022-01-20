@@ -38,7 +38,12 @@ const routes: Routes = [
     path: 'settings',
     component: LayoutComponent,
     loadChildren: () => import('./work-in-progress/work-in-progress.module').then(m => m.WorkInProgressModule)
-  }
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'board',
+  },
 ];
 
 @NgModule({
