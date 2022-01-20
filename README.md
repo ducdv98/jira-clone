@@ -4,7 +4,7 @@ I'm a frontend developer and I want to improve my coding skills and try out new 
 
 ## Demo
 ![](screenshots/img.png)
-You can see the live demo here: [Live demo](https://ducdv98.github.io/ng-jira-clone/ "https://ducdv98.github.io/ng-jira-clone/")
+You can see the live demo here: [Live demo](https://ducdv98.github.io/jira-clone/ "https://ducdv98.github.io/jira-clone/")
 
 ## Tech stack
 - [Angular - The modern web developer's platform.](https://angular.io/)
