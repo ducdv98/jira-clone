@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build  --base-href https://ducdv98.github.io/ng-jira-clone/",
-    "build:prod": "ng build ----configuration production  --base-href https://ducdv98.github.io/ng-jira-clone/",
+    "build": "ng build  --base-href https://ducdv98.github.io/jira-clone/",
+    "build:prod": "ng build ----configuration production  --base-href https://ducdv98.github.io/jira-clone/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
