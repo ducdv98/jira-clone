@@ -2,41 +2,41 @@
   {
     "id": "c2497c6c-7552-11ec-90d6-0242ac120003",
     "name": "Bitcoin",
-    "avatar": "/assets/avatars/bitcoin.png"
+    "avatar": "../assets/avatars/bitcoin.png"
   },
   {
     "id": "d64c9bf4-7552-11ec-90d6-0242ac120003",
     "name": "Doge Coin",
-    "avatar": "/assets/avatars/dogecoin.png"
+    "avatar": "../assets/avatars/dogecoin.png"
   },
   {
     "id": "dce0f258-7552-11ec-90d6-0242ac120003",
     "name": "Near Protocol",
-    "avatar": "/assets/avatars/near.png"
+    "avatar": "../assets/avatars/near.png"
   },
   {
     "id": "86ab4f72-7553-11ec-90d6-0242ac120003",
     "name": "Shiba Inu",
-    "avatar": "/assets/avatars/shiba.png"
+    "avatar": "../assets/avatars/shiba.png"
   },
   {
     "id": "4588f4a4-7553-11ec-90d6-0242ac120003",
     "name": "USDT",
-    "avatar": "/assets/avatars/usdt.png"
+    "avatar": "../assets/avatars/usdt.png"
   },
   {
     "id": "637b5326-7553-11ec-90d6-0242ac120003",
     "name": "Solana",
-    "avatar": "/assets/avatars/solana.png"
+    "avatar": "../assets/avatars/solana.png"
   },
   {
     "id": "80a57ce2-7553-11ec-90d6-0242ac120003",
     "name": "Tron",
-    "avatar": "/assets/avatars/tron.png"
+    "avatar": "../assets/avatars/tron.png"
   },
   {
     "id": "eed66294-7553-11ec-90d6-0242ac120003",
     "name": "Pancake Swap",
-    "avatar": "/assets/avatars/cake.png"
+    "avatar": "../assets/avatars/cake.png"
   }
 ]
